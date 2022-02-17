@@ -1,0 +1,79 @@
+:root {
+  // no change
+  --primaryBg: #e3e3e3;
+  --secondaryClr: purple;
+  --secondaryTxt: #c0fff4;
+
+  --bgGradient: linear-gradient(
+    to left top,
+    var(--secondaryTxt),
+    var(--secondaryClr)
+  );
+
+  --jsThemeClr: yellow;
+  --htmlThemeClr: orangered;
+  --cssThemeClr: blue;
+  --sassThemeClr: pink;
+
+  --themeTxtClr: rgb(255, 255, 0);
+  --defaultThemeClr: rgb(54, 54, 54);
+
+  --themeBg: rgb(255, 255, 0);
+  --themeSec: black;
+  --themeBlk: whitesmoke;
+  --themeWht: black;
+
+  --darkModeBg: #e3e3e3;
+  --darkModeTxtClr: rgb(54, 54, 54);
+  --darkModeTxtlgt: #e3e3e3;
+
+  --bgFilter: rgba(255, 255, 255, 0.2);
+  --bgFilterBlk: rgba(0, 0, 0, 0.4);
+  --bgFilterBlkDrk: rgba(0, 0, 0, 0.8);
+  --bgFilterDrk: rgba(255, 255, 255, 0.8);
+
+  --black: black;
+  --white: white;
+
+  --inputToggleThemeFilter: rgba(255, 255, 255, 0.2);
+  --inputToggleTheme: #c7c7c7;
+  --inputToggleTxt: rgb(54, 54, 54);
+
+  --xsmSpacer: 0.25em;
+  --smSpacer: 0.5em;
+  --mdSpacer: 1em;
+  --lgSpacer: 1.5em;
+  --xlgSpacer: 2em;
+  --xxlgSpacer: 3em;
+}
+body.transition,
+body.transition *,
+body.transition *:before,
+body.transition *:after {
+  transition: all 750ms;
+}
+
+body[data-darkMode="darkMode"] {
+  --darkModeBg: rgb(80, 80, 80);
+  --bgDarkMode: rgb(32, 32, 32);
+  --darkModeBgOp: rgba(255, 255, 255, 0.6);
+  --darkModeTxtClr: white;
+  --darkModeClrlgtOp: rgba(54, 54, 54, 0.6);
+  --darkModeRadialGradeRev: radial-gradient(
+    rgb(240, 240, 240),
+    rgb(110, 110, 110)
+  );
+  --themeTxtClr: white;
+  --darkModeSec: #e3e3e3;
+  --themeBg: black;
+  --themeSec: yellow;
+  --themeBlk: black;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
