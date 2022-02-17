@@ -1,10 +1,11 @@
 {
-  "name": "Vanilla_javaScript",
+  "name": "vanilla_javascript",
+  "homepage": "https://softcorp-industries.github.io/vanilla_javascript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
