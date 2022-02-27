@@ -1,1 +1,50 @@
 @use "_global" as *;
+
+.mainNav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 215px;
+    height: 99vh;
+    overflow: scroll;
+    border: 1px solid black;
+    h2 {
+        margin: 0;
+        padding: .5rem 0;
+        text-align: center;
+        color: var(--black);
+        background-color: yellow;
+        border-bottom: 1px solid black;
+    }
+    ul{
+        padding-left: 0;
+        li {
+            display: flex;
+            align-items: center;
+            height: 2em;
+            border-bottom: 1px solid black;
+            margin-bottom: 0;
+            a {
+                padding: .5em;
+                display: block;
+                width: 100%;
+                //height: 100%;
+                color: var(--darkModeTxtClr);
+                text-decoration: none;
+            }
+        }
+        li:hover {
+            background-color: lightgrey;
+            a {
+                color: var(--black);
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .mainNav {
+        min-width: 275px;
+    }
+}

@@ -1,0 +1,58 @@
+
+
+.mainHeader {
+    padding: 2rem 0;
+    text-align: center;
+    letter-spacing: .5rem;
+    span {
+        font-size: 3rem;
+        color: yellow;
+        text-shadow: 0px 0px 2px black;
+    }
+}
+.intro {
+    margin: auto;
+    padding-top: 1em;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 4em;
+    h2 {
+        letter-spacing: .3rem;
+        font-size: 2em;
+        a {
+            color: yellow;
+            text-shadow: 0px 0px 2px black;
+        }
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
+.credit {
+    margin: auto;
+    padding-top: 1em;
+    width: 90%;
+    p {
+        text-align: center;
+        margin-bottom: .5em;
+        padding-bottom: 0;
+        letter-spacing: .3rem;
+        font-size: 2em;
+        a {
+            text-decoration: none;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+}
+.credit {
+    p {
+        a:hover {
+            color: yellow;
+            text-shadow: 0px 0px 2px black;
+            transform: scale(1.2);
+        }
+    }
+}

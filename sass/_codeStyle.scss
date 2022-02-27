@@ -1,0 +1,46 @@
+.operator {
+    color: red;
+    font-weight: 600;
+}
+.keyword {
+    color: blue;
+    font-weight: 600;
+}
+.variable {
+    color: darkblue;
+    font-weight: 600;
+}
+.number {
+    color: purple;
+    font-weight: 600;
+}
+.string {
+    color: orange;
+    font-weight: 600;
+}
+.attribute {
+    color: green;
+    font-weight: 600;
+}
+.punctuation {
+    color: orange;
+}
+.comment {
+    color: grey;
+}
+.codeExample {
+    margin: 2rem auto;
+    width: 90%;
+    min-width: 250px;
+    min-height: 100px;
+    overflow: scroll;
+    border-left: 5px solid yellow;
+    background-color: rgb(201, 201, 201);
+    color: var(--black);
+}
+.codeExample code {
+    padding: .25rem;
+    white-space: pre;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

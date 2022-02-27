@@ -1,26 +1,65 @@
-@mixin shadowSm {
-  box-shadow: -4px -4px 7px #fff, 4px 4px 7px rgba(#000, 0.4);
-}
-@mixin shadowLg {
-  box-shadow: -8px -8px 9px #fff, 8px 8px 9px rgba(#000, 0.4);
-}
-@mixin shadowLg-inset {
-  box-shadow: inset -8px -8px 9px #fff, inset 8px 8px 9px rgba(#000, 0.4);
-}
-@mixin shadowSm-inset {
-  box-shadow: inset -4px -4px 7px #fff, inset 4px 4px 7px rgba(#000, 0.4);
-}
-@mixin darkMode {
-  box-shadow: inset -3px -3px 5px rgba(83, 83, 83, 0.6),
-    inset 3px 3px 5px rgba(202, 202, 202, 0.6);
-}
-@mixin tablet {
-  box-shadow: inset -3px -3px 6px rgba(202, 202, 202, 0.6),
-    inset 3px 3px 6px rgba(202, 202, 202, 0.6);
-}
-@mixin tabletBtn-inset {
-  box-shadow: inset -2px -2px 3px #fff, inset 2px 2px 3px rgba(#000, 0.4);
-}
-@mixin tabletBox {
-  box-shadow: -4px -4px 7px rgba(#000, 0.4), 4px 4px 7px rgba(#000, 0.4);
-}
+@use "_global" as *;
+@use "_mixin" as *;
+
+.darkMode {
+    @include shadowSm-inset;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 3px;
+    top: 20px;
+    right: 15px;
+    width: 50px;
+    height: 26px;
+    background-color: var(--bgDarkMode);
+    border-radius: 70px;
+    z-index: 10;
+    .dmToggle {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: none;
+      background-image: url("img/icon/936949-200.png");
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  .darkMode.showDarkMode{
+    display: flex;
+    animation: darkModeShow 750ms ease-in-out forwards;
+  }
+  .dmToggle.darkModeAnim{
+    animation: dmAnim 500ms ease-in-out forwards;
+  }
+  .dmToggle.darkModeAnimRev{
+    animation: dmAnimRev 500ms ease-in-out forwards;
+  }
+  @keyframes darkModeShow{
+    0%{
+      scale: 0;
+      opacity: 0;
+    }
+    
+    100%{
+      scale: 1;
+        opacity: 1;
+    }
+  }
+  @keyframes dmAnim {
+    0%{
+      transform: translateX(0px);
+    }
+    100%{
+      transform: translateX(23px);
+    }
+  }
+  @keyframes dmAnimRev {
+    0%{
+      transform: translateX(23px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }

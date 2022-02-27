@@ -1,0 +1,25 @@
+.chapter {
+    margin: auto;
+    padding-top: 1.5em;
+    width: 95%;
+    h2 {
+        font-size: 1.75em;
+    }
+}
+.subHeader {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.note {
+    margin-bottom: -1rem;
+}
+.consoleDisplay {
+    font-weight: 600;
+    font-style: italic;
+}
+.quote {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 650px;
+    text-align: center;
+}
