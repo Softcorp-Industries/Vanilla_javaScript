@@ -1,0 +1,367 @@
+.mainHeader {
+  padding: 2rem 0;
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+.mainHeader span {
+  font-size: 3rem;
+  color: yellow;
+  text-shadow: 0px 0px 2px black;
+}
+
+.intro {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 4em;
+}
+.intro h2 {
+  letter-spacing: 0.3rem;
+  font-size: 2em;
+}
+.intro h2 a {
+  color: yellow;
+  text-shadow: 0px 0px 2px black;
+}
+.intro p {
+  font-size: 1.2em;
+}
+
+.credit {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+}
+.credit p {
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding-bottom: 0;
+  letter-spacing: 0.3rem;
+  font-size: 2em;
+}
+.credit p a {
+  text-decoration: none;
+}
+.credit a {
+  display: block;
+  text-align: center;
+}
+
+.credit p a:hover {
+  color: yellow;
+  text-shadow: 0px 0px 2px black;
+  transform: scale(1.2);
+}
+
+:root {
+  --primaryBg: #e3e3e3;
+  --secondaryClr: purple;
+  --secondaryTxt: #c0fff4;
+  --bgGradient: linear-gradient(
+    to left top,
+    var(--secondaryTxt),
+    var(--secondaryClr)
+  );
+  --jsThemeClr: yellow;
+  --htmlThemeClr: orangered;
+  --cssThemeClr: blue;
+  --sassThemeClr: pink;
+  --themeTxtClr: rgb(255, 255, 0);
+  --defaultThemeClr: rgb(54, 54, 54);
+  --themeBg: rgb(255, 255, 0);
+  --themeSec: black;
+  --themeBlk: whitesmoke;
+  --themeWht: black;
+  --darkModeBg: #e3e3e3;
+  --darkModeTxtClr: rgb(54, 54, 54);
+  --darkModeTxtlgt: #e3e3e3;
+  --bgFilter: rgba(255, 255, 255, 0.2);
+  --bgFilterBlk: rgba(0, 0, 0, 0.4);
+  --bgFilterBlkDrk: rgba(0, 0, 0, 0.8);
+  --bgFilterDrk: rgba(255, 255, 255, 0.8);
+  --black: black;
+  --white: white;
+  --inputToggleThemeFilter: rgba(255, 255, 255, 0.2);
+  --inputToggleTheme: #c7c7c7;
+  --inputToggleTxt: rgb(54, 54, 54);
+  --xsmSpacer: 0.25em;
+  --smSpacer: 0.5em;
+  --mdSpacer: 1em;
+  --lgSpacer: 1.5em;
+  --xlgSpacer: 2em;
+  --xxlgSpacer: 3em;
+}
+
+body.transition,
+body.transition *,
+body.transition *:before,
+body.transition *:after {
+  transition: all 750ms;
+}
+
+body {
+  background-color: var(--darkModeBg);
+  margin-left: 225px;
+  font-size: 16px;
+  color: var(--darkModeTxtClr);
+}
+
+body[data-darkMode=darkMode] {
+  --darkModeBg: rgb(80, 80, 80);
+  --bgDarkMode: rgb(32, 32, 32);
+  --darkModeBgOp: rgba(255, 255, 255, 0.6);
+  --darkModeTxtClr: white;
+  --darkModeClrlgtOp: rgba(54, 54, 54, 0.6);
+  --darkModeRadialGradeRev: radial-gradient(
+    rgb(240, 240, 240),
+    rgb(110, 110, 110)
+  );
+  --themeTxtClr: white;
+  --darkModeSec: #e3e3e3;
+  --themeBg: black;
+  --themeSec: yellow;
+  --themeBlk: black;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 20px;
+    margin-left: 285px;
+  }
+}
+.darkMode {
+  box-shadow: inset -4px -4px 7px #fff, inset 4px 4px 7px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 3px;
+  top: 20px;
+  right: 15px;
+  width: 50px;
+  height: 26px;
+  background-color: var(--bgDarkMode);
+  border-radius: 70px;
+  z-index: 10;
+}
+.darkMode .dmToggle {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background-image: url("img/icon/936949-200.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.darkMode.showDarkMode {
+  display: flex;
+  -webkit-animation: darkModeShow 750ms ease-in-out forwards;
+          animation: darkModeShow 750ms ease-in-out forwards;
+}
+
+.dmToggle.darkModeAnim {
+  -webkit-animation: dmAnim 500ms ease-in-out forwards;
+          animation: dmAnim 500ms ease-in-out forwards;
+}
+
+.dmToggle.darkModeAnimRev {
+  -webkit-animation: dmAnimRev 500ms ease-in-out forwards;
+          animation: dmAnimRev 500ms ease-in-out forwards;
+}
+
+@-webkit-keyframes darkModeShow {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes darkModeShow {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes dmAnim {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(23px);
+  }
+}
+@keyframes dmAnim {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(23px);
+  }
+}
+@-webkit-keyframes dmAnimRev {
+  0% {
+    transform: translateX(23px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes dmAnimRev {
+  0% {
+    transform: translateX(23px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.chapter {
+  margin: auto;
+  padding-top: 1.5em;
+  width: 95%;
+}
+.chapter h2 {
+  font-size: 1.75em;
+}
+
+.subHeader {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.note {
+  margin-bottom: -1rem;
+}
+
+.consoleDisplay {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.quote {
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.operator {
+  color: red;
+  font-weight: 600;
+}
+
+.keyword {
+  color: blue;
+  font-weight: 600;
+}
+
+.variable {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.number {
+  color: purple;
+  font-weight: 600;
+}
+
+.string {
+  color: orange;
+  font-weight: 600;
+}
+
+.attribute {
+  color: green;
+  font-weight: 600;
+}
+
+.punctuation {
+  color: orange;
+}
+
+.comment {
+  color: grey;
+}
+
+.codeExample {
+  margin: 2rem auto;
+  width: 90%;
+  min-width: 250px;
+  min-height: 100px;
+  overflow: scroll;
+  border-left: 5px solid yellow;
+  background-color: #c9c9c9;
+  color: var(--black);
+}
+
+.codeExample code {
+  padding: 0.25rem;
+  white-space: pre;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.mainNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 215px;
+  height: 99vh;
+  overflow: scroll;
+  border: 1px solid black;
+}
+.mainNav h2 {
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: var(--black);
+  background-color: yellow;
+  border-bottom: 1px solid black;
+}
+.mainNav ul {
+  padding-left: 0;
+}
+.mainNav ul li {
+  display: flex;
+  align-items: center;
+  height: 2em;
+  border-bottom: 1px solid black;
+  margin-bottom: 0;
+}
+.mainNav ul li a {
+  padding: 0.5em;
+  display: block;
+  width: 100%;
+  color: var(--darkModeTxtClr);
+  text-decoration: none;
+}
+.mainNav ul li:hover {
+  background-color: lightgrey;
+}
+.mainNav ul li:hover a {
+  color: var(--black);
+}
+
+@media (min-width: 1000px) {
+  .mainNav {
+    min-width: 275px;
+  }
+}
