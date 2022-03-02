@@ -108,7 +108,7 @@ body {
 }
 
 body[data-darkMode=darkMode] {
-  --darkModeBg: rgb(80, 80, 80);
+  --darkModeBg: rgb(49, 49, 49);
   --bgDarkMode: rgb(32, 32, 32);
   --darkModeBgOp: rgba(255, 255, 255, 0.6);
   --darkModeTxtClr: white;
@@ -127,9 +127,22 @@ body[data-darkMode=darkMode] {
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  line-height: 1.4;
+  letter-spacing: 0.05rem;
+}
+
+a {
+  color: black;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 1000px) {
@@ -155,8 +168,8 @@ body[data-darkMode=darkMode] {
 }
 .darkMode .dmToggle {
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
   border: none;
   background-image: url("img/icon/936949-200.png");
@@ -342,21 +355,22 @@ body[data-darkMode=darkMode] {
 .mainNav ul li {
   display: flex;
   align-items: center;
-  height: 2em;
+  background-color: #f3f342;
   border-bottom: 1px solid black;
   margin-bottom: 0;
 }
 .mainNav ul li a {
+  height: 2em;
   padding: 0.5em;
   display: block;
   width: 100%;
-  color: var(--darkModeTxtClr);
+  height: 100%;
+  font-weight: 600;
+  color: var(--themeWht);
   text-decoration: none;
 }
-.mainNav ul li:hover {
-  background-color: lightgrey;
-}
-.mainNav ul li:hover a {
+.mainNav ul li a:hover {
+  background-color: yellow;
   color: var(--black);
 }
 

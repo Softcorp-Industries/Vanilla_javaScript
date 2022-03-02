@@ -1,4 +1,4 @@
-alert("working")
+//alert("working")
 // Dark Mode and Local Storage
 const darkModeBtn = document.getElementById("darkModeBtn");
 
