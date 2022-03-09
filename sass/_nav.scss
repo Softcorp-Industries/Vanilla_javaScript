@@ -1,26 +1,28 @@
-.mainNav {
+.main-nav {
   position: fixed;
   left: 0;
   top: 0;
   min-width: 215px;
   height: 99vh;
-  overflow: scroll;
-  border: 1px solid black;
+  overflow: auto;
+  border: 1px solid rgb(49, 49, 49);
+  font-family: "Roboto";
+  background-color: black;
   h2 {
     margin: 0;
     padding: 0.5rem 0;
     text-align: center;
     color: var(--black);
     background-color: yellow;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(49, 49, 49);
   }
-  ul {
+  .navBar {
     padding-left: 0;
     li {
       display: flex;
       align-items: center;
-      background-color: rgb(243, 243, 66);
-      border-bottom: 1px solid black;
+      //background-color: rgb(243, 243, 66);
+      border-bottom: 1px solid var(--jsThemeClr);
       margin-bottom: 0;
       a {
         height: 2em;
@@ -29,7 +31,8 @@
         width: 100%;
         height: 100%;
         font-weight: 600;
-        color: var(--themeWht);
+        letter-spacing: 2px;
+        color: white;
         text-decoration: none;
     }
 }
@@ -41,7 +44,7 @@ li a:hover {
 }
 
 @media (min-width: 1000px) {
-  .mainNav {
+  .main-nav {
     min-width: 275px;
   }
 }

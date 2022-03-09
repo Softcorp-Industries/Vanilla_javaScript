@@ -4,6 +4,8 @@
     width: 95%;
     h2 {
         font-size: 1.75em;
+        color: yellow;
+        text-shadow: 0px 0px 2px black;
     }
 }
 .subHeader {
@@ -12,6 +14,7 @@
 }
 .note {
     margin-bottom: -1rem;
+    font-weight: 600;
 }
 .consoleDisplay {
     font-weight: 600;
@@ -22,4 +25,21 @@
     width: 80%;
     max-width: 650px;
     text-align: center;
+}
+.vidChapters {
+    display: none;
+}
+.mdnDoc {
+    padding: 1.25em;
+    color: white;
+    background-color: black;
+    border-radius: 1em;
+}
+
+@media (min-width: 700px) {
+  .chapter {
+      h2 {
+          font-size: 2em;
+      }
+  }
 }

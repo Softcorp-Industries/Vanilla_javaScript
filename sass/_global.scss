@@ -94,7 +94,24 @@ ul {
 li {
   margin-bottom: .5rem;
 }
-
+hr {
+  margin: 2.5em auto;
+  width: 80%;
+  background-color: yellow;
+  height: 5px;
+  border-radius: 5px;
+}
+picture {
+  display: none;
+  iframe {
+    width: 95%;
+    //height: auto;
+    max-width: 560px;
+    max-height: 315px;
+    display: block;
+    margin: auto;
+  }
+}
 @media (min-width: 1000px) {
   body {
       font-size: 20px;
