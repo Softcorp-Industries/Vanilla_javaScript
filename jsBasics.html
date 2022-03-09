@@ -1,0 +1,2836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="main.css" />
+  <script src="main.js" type="module" defer></script>
+  <title>Learn javaScript Basics</title>
+</head>
+
+<body data-darkMode='light'>
+  <nav class="main-nav">
+    <h2>JS Basics</h2>
+    <ul class="navBar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#MDNWebDocs">JS - MDN Web Docs</a></li>
+      <li><a href="#jsFccBasics">JS - Basics FCC</a></li>
+      <li><a href="#dataTypes">Data Types</a></li>
+      <li><a href="#variables">Variables</a></li>
+      <li><a href="#numbers">Numbers</a></li>
+      <li><a href="#strings">Strings</a></li>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#booleans">Booleans</a></li>
+      <li><a href="#conditionals">Conditionals</a></li>
+      <li><a href="#elseStatements">Else Statements</a></li>
+      <li><a href="#switchStatements">Switch Statements</a></li>
+      <li><a href="#objects">Objects</a></li>
+      <li><a href="#loops">Loops</a></li>
+      <li><a href="#moreFunctionStuff">Function Stuff</a></li>
+      <li><a href="#codeChallenges">FCC Code Challenges</a></li>
+    </ul>
+  </nav>
+  <header class="main-header">
+    <div id="darkMode" class="darkMode">
+      <button id="darkModeBtn" class="dmToggle"></button>
+    </div>
+    <h1>javaScript Basics</h1>
+  </header>
+  <article class="quote">
+    <p>
+      Perfect people don't drink, don't fight, don't lie, don't make mistakes and...don't exist
+    </p>
+    <p class="author">Paulo Coelho</p>
+  </article>
+  <section class="intro" id="MDNWebDocs">
+    <h2>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
+        title="MDN Web Docs">JavaScript</a>
+    </h2>
+    <p>
+      JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled
+      programming language with first-class functions. While it is most
+      well-known as the scripting language for Web pages, many non-browser
+      environments also use it, such as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Node.js" target="_blank" title="MDN node.js">Node.js</a>, <a href="https://couchdb.apache.org/" target="_blank" title="Apache CouchDB">Apache CouchDB</a> and <a href="https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/" target="_blank" title="Adobe Acrobat">Adobe
+      Acrobat</a>. JavaScript is a prototype-based, multi-paradigm,
+      single-threaded, dynamic language, supporting object-oriented,
+      imperative, and declarative (e.g. functional programming) styles.
+    </p>
+  </section>
+  <div class="credit" id="jsFccBasics">
+    <p>
+      <a href="https://www.freecodecamp.org/" target="_blank" title="Free Code Camp">freeCodeCamp</a>
+    </p>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures" target="_blank"
+      title="FCC">javaScript Algorithms and Data Structures</a>
+  </div>
+  <br>
+  <picture>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </picture>
+  <div class="vidChapters">
+    <pre>
+  comment your Javascript code 4:22
+  data types and variables 5:58
+  storing values with assignment operator 9:14
+  initializing variables with assignment operator 11:33
+  uninitialized variables 12:00
+  case sensitivity in variables 12:41
+  adding numbers 14:05
+  subtracting numbers 14:36
+  multiplying numbers 14:53
+  dividing numbers15:11
+  incermenting numbers 15:30
+  decrementing numbers15:59
+  decimal numbers 16:23
+  multiply decimals 16:50
+  divide decimals 17:18
+  finding a remainder 17:35
+  compound assignment with augmented addition 18:22
+  compound assignment with augmented subtraction 19:21
+  compound assignment with augmented multiplication 20:20
+  compound assignment with augmented division 20:52
+  declare string variables 21:21
+  escaping literal quotes in strings 22:02
+  quotinq strings with single quotes 22:43
+  escape sequences in strings 25:19
+  concatenating string with plus operator 26:48
+  concatenating string with variables 29:01
+  appending variables to strings 30:15
+  find a length of string 31:12
+  bracket notation to find first character in string 32:01
+  bracket notation to find Nth character in string34:24
+  bracket notation to find last character in string34:54
+  word blanks 36:31
+  store multiple values with arrays40:45
+  nested arrays 41:44
+  access array data with indexes42:35
+  modify array data with indexes 43:37
+  access multi-dimensional arrays with indexes 44:47
+  manipulate arrays with pop() 47:28
+  manipulate arrays with shift() 48:35
+  manipulate arrays with unshift() 49:23
+  shopping list 50:37
+  write reusable code with functions 51:43
+  passing values to functions with arguments 53:41
+  global scope and functions 55:44
+  local scope and functions 59:32
+  understand undefined value returned from a function 1:03:56
+  assignment with a returned value1:04:53
+  stand in line 1:05:53
+  boolean values 1:08:41
+  use conditional logic with if statements 1:09:24
+  comparison with the strict equality operator 1:13:20
+  practice comparing different values 1:14:42
+  comparison with inequality operator1:15:38
+  comparison with greater than or equal to operator1:17:39
+  comparison with less than or equal to operator1:18:45
+  comparison with the logical and operator1:19:18
+  comparison with the logical or operator 1:20:42
+  else statements 1:21:38
+  else if statements 1:22:28
+  chaining if else statements 1:24:45
+  golf code 1:27:47
+  switch statement1:32:14
+  default option in switch statements 1:35:46
+  multiple identical options in switch statements 1:37:25
+  replacing if else chins with switch 1:39:20
+  returning boolean value form functions1:41:11
+  returning an early pattern from functions1:42:20
+  counting cards 1:43:38
+  build javascript objects1:49:12
+  accessing object properties with dot notation1:50:47
+  accessing object properties with bracket notation1:51:34
+  accessing object properties with variables1:52:48
+  updating object properties 1:53:36
+  add new property to an object 1:54:31
+  delete properties form an object1:55:19
+  using objects for lookups 1:55:55
+  testing objects for properties 1:57:46
+  manipulating complex objects1:59:15
+  accessing nested objects 2:01:03
+  accessing nested arrays 2:01:52
+  record collection 2:03:05
+  iterate with while oop 2:10:15
+  iterate with for loops 2:11:34
+  iterate odd numbers with a for loop 2:13:56
+  count backwards with a for loop2:15:29
+  iterative through an array with for loop 2:17:08
+  nesting for loops 2:19:43
+  nesting with do..while loops 2:22:45
+  profile lookup 2:24:12
+  generate random fractions 2:28:18
+  generate random whole numbers 2:28:55
+  generate random whole numbers within a range 2:30:24
+  use the parseInt function 2:31:47
+  use the parseInt function with a radix 2:32:37
+  use the conditional(ternary) operator 2:33:29
+  use multiple conditional (ternary)operators 2:34:58
+  difference between the var and let keywords2:36:58
+  compare scopes of the var and let keywords2:39:05
+  declare a read-only variable with the const keyword2:41:35
+  mutate an array declared with const 2:43:41
+  prevent object mutation 2:44:53
+  use arrow function to write concise anonymous functions 2:47:17
+  write arrow functions with parameters 2:48:23
+  write higher order arrow functions2:49:26
+  write higher order arrow functions 2:53:05
+  use the spread operator to evaluate arrays In-Place 2:55:33
+  use destruction in assignment to assign variables from objects 2:57:18
+  destructuring assignment with nested objects 3:00:17
+  use destructuring assignment to assign variables from arrays 3:01:54
+  use destructuring assignment with the rest operator 3:03:42
+  create string using template literals 3:06:39
+  write concise object literal declarations using simple fields 3:10:42
+  write concise declarative functions 3:12:24
+  use class syntax to define a constructor function 3:12:59
+  use getters and setters to control access to an object 3:15:10
+  understanding the differences between import and require 3:20:25
+  use export to reuse a code block 3:22:33
+  use * to import everything from a file 3:23:40
+  create an export fallback with export default 3:24:50
+  import a default export 3:25:25
+  Outro  3:26:18
+    </pre>
+  </div>
+  <hr>
+  <main>
+    <section class="chapter" id="dataTypes">
+      <h2>Data Types:</h2>
+      <section id="dataType-8">
+        <p class="subHeader">JavaScript provides eight different data types.</p>
+        <ol>
+          <li>undefined</li>
+          <li>null</li>
+          <li>boolean</li>
+          <li>string</li>
+          <li>number</li>
+          <li>symbol</li>
+          <li>bigint</li>
+          <li>object</li>
+        </ol>
+        <p>
+          Every Variable has a data type that tells what kind of data is being
+          stored in a variable. There are two types of data types in
+          JavaScript namely Primitive data types and Non-primitive data types.
+        </p>
+      </section>
+      <section id="dataTypeCategory">
+        <article id="primitiveDataType">
+          <p class="subHeader note">Primitive Data Types:</p>
+          <p>
+            The predefined data types provided by JavaScript language are
+            known as primitive data types. Primitive data types are also known
+            as in-built data types.
+          </p>
+          <ol>
+            <li>undefined</li>
+            <li>null</li>
+            <li>boolean</li>
+            <li>string</li>
+            <li>number</li>
+          </ol>
+        </article>
+        <article id="nonPrimitiveDataType">
+          <p class="subHeader note">Non-Primitive Data Types:</p>
+          <p>
+            The data types that are derived from primitive data types of the
+            JavaScript language are known as non-primitive data types. It is
+            also known as derived data types or reference data types.
+          </p>
+          <ul>
+            <li>object</li>
+            <li>array</li>
+          </ul>
+        </article>
+      </section>
+      <br />
+      <section id="dataTypeDefinition">
+        <p class="subHeader">Data Type Definitions</p>
+        <article id="undefined">
+          <p>
+            <strong>undefined:</strong> A variable that has not been assigned
+            a value has the value: undefined.
+          </p>
+        </article>
+        <br />
+        <article id="null">
+          <p>
+            <strong>null:</strong> The Null type has exactly one value: null.
+          </p>
+        </article>
+        <br />
+        <article id="boolean">
+          <p>
+            <strong>boolean:</strong> Boolean represents a logical entity and
+            can have two values: true and false.
+          </p>
+        </article>
+        <br />
+        <article id="string">
+          <p>
+            <strong>string:</strong> JavaScript's String type is used to
+            represent textual data. It is a set of "elements" of 16-bit
+            unsigned integer values. Each element in the String occupies a
+            position in the String. The first element is at index 0, the next
+            at index 1, and so on. The length of a String is the number of
+            elements in it.
+          </p>
+          <p>
+            Unlike some programming languages (such as C), JavaScript strings
+            are immutable. This means that once a string is created, it is not
+            possible to modify it.
+          </p>
+          <p>
+            However, it is still possible to create another string based on an
+            operation on the original string.
+          </p>
+        </article>
+        <br />
+        <article id="number">
+          <p>
+            <strong>number:</strong>
+          </p>
+        </article>
+        <br />
+        <article id="symbol">
+          <p>
+            <strong>symbol:</strong> A Symbol is a unique and immutable
+            primitive value and may be used as the key of an Object property
+            (see below). In some programming languages, Symbols are called
+            "atoms".
+          </p>
+        </article>
+        <br />
+        <article id="bigint">
+          <p>
+            <strong>bigint:</strong> The BigInt type is a numeric primitive in
+            JavaScript that can represent integers with arbitrary precision.
+          </p>
+        </article>
+        <br />
+        <article id="object">
+          <p>
+            <strong>object:</strong> In computer science, an object is a value
+            in memory which is possibly referenced by an identifier.
+          </p>
+          <p>
+            In JavaScript, objects can be seen as a collection of properties.
+            With the object literal syntax, a limited set of properties are
+            initialized; then properties can be added and removed. Property
+            values can be values of any type, including other objects, which
+            enables building complex data structures. Properties are
+            identified using key values. A key value is either a String value
+            or a Symbol value.
+          </p>
+          <p>
+            There are two types of object properties: The data property and
+            the accessor property.
+          </p>
+          <p><strong>Data property:</strong> Associates a key with a value</p>
+          <p>
+            <strong>Accessor property:</strong> Associates a key with one of
+            two accessor functions (get and set) to retrieve or store a value.
+          </p>
+        </article>
+      </section>
+    </section>
+    <br />
+    <section class="chapter" id="variables">
+      <h2>Variables:</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables" target="_blank" title="FCC 'Declare javaScript Variables">
+        <p class="subHeader">Declare JavaScript Variables</p>
+      </a>
+      <p>
+        In computer science, data is anything that is meaningful to the computer. JavaScript provides eight different data types which are undefined, null, boolean, string, symbol, bigint, number, and object.
+      </p>
+      <p>
+        For example, computers distinguish between numbers, such as the number 12, and strings, such as "12", "dog", or "123 cats", which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.
+      </p>
+      <p>
+        Variables allow computers to store and manipulate data in a dynamic
+        fashion. They do this by using a "label" to point to the data rather
+        than using the data itself. Any of the eight data types may be stored
+        in a variable.
+      </p>
+      <p>
+        Variables are similar to the x and y variables you use in mathematics,
+        which means they're a simple name to represent the data we want to
+        refer to. Computer variables differ from mathematical variables in
+        that they can store different values at different times.
+      </p>
+      <p>
+        We tell JavaScript to create or declare a variable by putting the
+        keyword <span class="keyword">var</span>,
+        <span class="keyword">let</span> or
+        <span class="keyword">const</span> in front of it
+      </p>
+      <p>
+        In JavaScript, you can store a value in a variable with the assignment
+        operator (<span class="operator">=</span>).
+      </p>
+      <section>
+        <p class="subHeader note">
+          <span class="keyword">var</span>
+        </p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">var</span> <span class="variable">myVar</span> <span class="operator">=</span> <span class="string">"Hello World!"</span><span class="punctuation">;</span>
+
+  console.<span class="attribute">log</span><span class="punctuation">(<span class="variable">myVar</span><span class="punctuation">);</span>
+            </code>
+        </pre>
+        <p>
+          If there are any calculations to the right of the
+          <span class="operator">=</span> operator, those are performed before
+          the value is assigned to the variable on the left of the operator.
+        </p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">var</span> <span class="variable">myVar</span> <span class="operator">=</span> <span class="number">2</span> <span class="operator">+</span> <span class="number">2</span><span class="punctuation">;</span>
+
+  console.<span class="attribute">log</span><span class="punctuation">(</span><span class="variable">myVar</span><span class="punctuation">);</span>
+            </code>
+        </pre>
+        <p class="subHeader note">Note:</p>
+        <p>
+          One of the biggest problems with declaring variables with the
+          <span class="keyword">var</span> keyword is that you can easily
+          overwrite variable declarations:
+        </p>
+        <p>
+          In a small application, you might not run into this type of problem.
+          But as your codebase becomes larger, you might accidentally
+          overwrite a variable that you did not intend to. Because this
+          behavior does not throw an error, searching for and fixing bugs
+          becomes more difficult.
+        </p>
+      </section>
+      <br />
+      <p class="subHeader">ES6 variables</p>
+      <section>
+        <p class="subHeader note">
+          <span class="keyword">let</span>
+        </p>
+        <p>
+          So unlike <span class="keyword">var</span>, when you use <span class="keyword">let</span>, a variable with the
+          same name can
+          only be declared once.
+        </p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">var</span> <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"James"</span><span class="punctuation">;</span>
+  <span class="keyword">var</span> <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"David"</span><span class="punctuation">;</span>
+
+  console.<span class="attribute">log</span><span class="punctuation">(</span><span class="variable">camper</span><span class="punctuation">);</span>
+            </code>
+        </pre>
+        <p>This will not cause an error using the keyword <span class="keyword">var</span>.</p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">let</span> <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"James"</span><span class="punctuation">;</span>
+  <span class="keyword">let</span> <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"David"</span><span class="punctuation">;</span>
+  
+  console.<span class="attribute">log</span><span class="punctuation">(</span><span class="variable">camper</span><span class="punctuation">);</span>
+            </code>
+        </pre>
+        <p>This will cause a <em>redeclaration of let</em> error.</p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">let</span> <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"James"</span><span class="punctuation">;</span>
+  <span class="variable">camper</span> <span class="operator">=</span> <span class="string">"David"</span><span class="punctuation">;</span>
+  
+  console.<span class="attribute">log</span><span class="punctuation">(</span><span class="variable">camper</span><span class="punctuation">);</span>
+            </code>
+        </pre>
+        <p>
+          This will not cause an error. You are not redeclaring the variable
+          just changing the value.
+        </p>
+      </section>
+      <br />
+      <section>
+        <p class="subHeader note">
+          <span class="keyword">const</span>
+        </p>
+        <p>
+          The keyword <span class="keyword">let</span> is not the only new way to declare variables. In
+          ES6, you can also declare variables using the <span class="keyword">const</span> keyword.
+        </p>
+        <p>
+          <span class="keyword">const</span> has all the awesome features that <span class="keyword">let</span> has,
+          with the added
+          bonus that variables declared using <span class="keyword">const</span> are read-only. They are a
+          constant value, which means that once a variable is assigned with
+          <span class="keyword">const</span>, it cannot be reassigned:
+        </p>
+        <pre class="codeExample">
+          <code>
+  <span class="keyword">const</span> <span class="variable">FAV_PET</span> <span class="operator">=</span> <span class="string">"Cats"</span><span class="punctuation">;</span>
+  <span class="variable">FAV_PET</span> <span class="operator">=</span> <span class="string">"Dogs"</span><span class="punctuation">;</span>
+
+  console.<span class="attribute">log</span><span class="punctuation">(</span><span class="variable">FAV_PET</span><span class="punctuation">);</span>
+          </code>
+        </pre>
+        <p>This will cause an <em>invalid assignment to const</em> error.</p>
+        <br />
+        <p>
+          A common practice when naming constants is to use all uppercase
+          letters, with words separated by an underscore.
+        </p>
+        <p>
+          You should always name variables you don't want to reassign using
+          the <span class="keyword">const</span> keyword. This helps when you accidentally attempt to
+          reassign a variable that is meant to stay constant.
+        </p>
+        <br />
+        <p class="subHeader note">Note:</p>
+        <p>
+          It is common for developers to use uppercase variable identifiers
+          for immutable values and lowercase or camelCase for mutable values
+          (objects and arrays). You will learn more about objects, arrays, and
+          immutable and mutable values in later challenges. Also in later
+          challenges, you will see examples of uppercase, lowercase, or
+          camelCase variable identifiers.
+        </p>
+      </section>
+      <br />
+      <p class="subHeader note">Best Practices</p>
+      <p>
+        Write variable names in JavaScript in camelCase. In camelCase,
+        multi-word variable names have the first word in lowercase and the
+        first letter of each subsequent word is capitalized.
+      </p>
+      <br />
+      <p class="subHeader note">Uninitialized Variables</p>
+      <p>
+        When JavaScript variables are declared, they have an initial value of
+        <span class="operator">undefined</span>. If you do a mathematical
+        operation on an <span class="operator">undefined</span> variable your
+        result will be <span class="operator">NaN</span> which means "Not a
+        Number". If you concatenate a string with an
+        <span class="operator">undefined</span> variable, you will get a
+        literal <em>string</em> of <span class="operator">undefined</span>.
+      </p>
+    </section>
+    <br />
+    <section class="chapter" id="numbers">
+      <h2>Numbers</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript" target="_blank" title="FCC 'Adding Two Numbers'">
+        <p class="subHeader">Adding numbers</p>
+      </a>
+      <p>
+        Number is a data type in JavaScript which represents numeric data.
+      </p>
+      <p>
+        JavaScript uses the + symbol as an addition operator when placed
+        between two numbers.
+      </p>
+      <pre class="codeExample">
+        <code>
+  const myVar = 5 + 10;
+
+  console.log(<span class="variable">myVar</span>);
+          </code>
+      </pre>
+      <p>myVar now has the value 15.</p>
+      <br />
+      <p class="subHeader">Subtracting numbers</p>
+      <p>We can also subtract one number from another.</p>
+      <p>JavaScript uses the - symbol for subtraction.</p>
+      <div class="codeExample">
+        <code>
+  const myVar = 12 - 6;
+  
+  console.log(<span class="variable">myVar</span>);
+          </code>
+      </div>
+      <p>myVar would have the value 6.</p>
+      <br />
+      <p class="subHeader">Multiplying numbers</p>
+      <p>We can also multiply one number by another.</p>
+      <p>JavaScript uses the * symbol for multiplication of two numbers.</p>
+      <pre class="codeExample">
+        <code>
+const myVar = 13 * 13;
+
+console.log(<span class="variable">myVar</span>);
+          </code>
+      </pre>
+      <p>myVar would have the value 169.</p>
+      <br />
+      <p class="subHeader">Dividing numbers</p>
+      <p>We can also divide one number by another.</p>
+      <p>JavaScript uses the / symbol for division.</p>
+      <pre class="codeExample">
+        <code>
+  const myVar = 16 / 2;
+  
+  console.log(<span class="variable">myVar</span>);
+          </code>
+      </pre>
+      <p>myVar now has the value 8.</p>
+      <br />
+      <p class="subHeader">Increment a number</p>
+      <p>
+        You can easily increment or add one to a variable with the ++
+        operator.
+      </p>
+      <pre class="codeExample">
+        <code>
+ i++;
+        </code>
+      </pre>
+      <p>is the equivalent of</p>
+      <pre class="codeExample">
+        <code>
+ i = i + 1; 
+        </code>
+      </pre>
+      <p class="subHeader">Note:</p>
+      <p>
+        The entire line becomes i++;, eliminating the need for the equal sign.
+      </p>
+      <br />
+      <p class="subHeader">Decrement a Number</p>
+      <p>
+        You can easily decrement or decrease a variable by one with the --
+        operator.
+      </p>
+      <div class="codeExample">
+        <code>
+  i--; 
+          </code>
+      </div>
+      <p>is the equivalent of</p>
+      <pre class="codeExample">
+          <code> 
+  i = i - 1; 
+          </code>
+        </pre>
+      <p class="subHeader">Note:</p>
+      <p>
+        The entire line becomes i--;, eliminating the need for the equal sign.
+      </p>
+      <br />
+      <p class="subHeader">Decimal Numbers</p>
+      <p>
+        We can store decimal numbers in variables too. Decimal numbers are
+        sometimes referred to as <em>floating point</em> numbers or
+        <em>floats</em>.
+      </p>
+      <p class="subHeader note">Note:</p>
+      <p>
+        Not all real numbers can accurately be represented in floating point.
+        This can lead to rounding errors.
+      </p>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems" target="_blank"
+          title="Wikipedia Floating-Point">Floating-point arithmetic</a>
+      </p>
+      <br />
+      <p class="subHeader">Multiply Two Decimals</p>
+      <p>
+        In JavaScript, you can also perform calculations with decimal numbers,
+        just like whole numbers.
+      </p>
+      <div class="codeExample">
+        <code>
+  const product = 2.0 * 5.5;
+
+  console.log(<span class="variable">product<span>);
+          </code>
+      </div>
+      <p>product now has a value of 11</p>
+      <br />
+      <p class="subHeader">Divide One Decimal by Another</p>
+      <div class="codeExample">
+        <code>
+  const quotient = 4.4 / 2.0;
+
+  console.log(<span class="variable"
+              >quotient</span
+            >); 2.2
+          </code>
+      </div>
+      <p>quotient now has a value of 2.2</p>
+      <br />
+      <p class="subHeader">Finding a Remainder</p>
+      <p>
+        The <em>remainder</em> operator <span class="operator">%</span> gives the remainder of the division of two
+        numbers.
+      </p>
+      <div class="codeExample">
+        <code>
+  5 % 2 = 1 because 
+  Math.floor(5 / 2) = 2 (Quotient) 
+  2 * 2 = 4 5 - 4 =
+  1 (Remainder)
+          </code>
+      </div>
+      <br />
+      <p class="subHeader note">Usage:</p>
+      <p>
+        In mathematics, a number can be checked to be even or odd by checking
+        the remainder of the division of the number by 2.
+      </p>
+      <div class="codeExample">
+        <code>
+  17 % 2 = 1 (17 is Odd) 
+  48 % 2 = 0 (48 is Even)
+          </code>
+      </div>
+      <br />
+      <p class="subHeader note">Note:</p>
+      <p>
+        The <em>remainder</em> operator is sometimes incorrectly referred to as the
+        modulus operator. It is very similar to modulus, but does not work
+        properly with negative numbers.
+      </p>
+      <br />
+      <p class="subHeader">Compound Assignment With Augmented Addition</p>
+      <p>In programming, it is common to use assignments to modify the contents of a variable. Remember that everything
+        to the right of the equals sign is evaluated first, so we can say:</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 1;
+  myVar = myVar + 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>to add 5 to myVar. Since this is such a common pattern, there are operators which do both a mathematical
+        operation and assignment in one step.</p>
+      <p>One such operator is the += operator.</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 1;
+  myVar += 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>6 would be displayed in the console in both code examples.</p>
+      <br>
+      <p class="subHeader">Compound Assignment With Augmented Subtraction</p>
+      <p>Like the += operator, -= subtracts a number from a variable.</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 15;
+  myVar = myVar - 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>will subtract 5 from myVar. This can be rewritten as:</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 15;
+  myVar -= 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>10 would be displayed in the console in both code examples.</p>
+      <br>
+      <p class="subHeader">Compound Assignment With Augmented Multiplication</p>
+      <p>The *= operator multiplies a variable by a number.</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 5;
+  myVar = myVar * 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>will multiply myVar by 5. This can be rewritten as:</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 5;
+  myVar *= 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>25 would be displayed in the console in both code examples.</p>
+      <br>
+      <p class="subHeader">Compound Assignment With Augmented Division</p>
+      <p>The /= operator divides a variable by another number.</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 15;
+  myVar = myVar / 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>will multiply myVar by 5. This can be rewritten as:</p>
+      <pre class="codeExample">
+          <code>
+  let myVar = 15;
+  myVar /= 5;
+
+  console.log(myVar);
+          </code>
+        </pre>
+      <p>3 would be displayed in the console in both code examples.</p>
+    </section>
+    <br>
+    <section class="chapter" id="strings">
+      <h2>Strings</h2>
+      <p class="subHeader">Escaping Literal Quotes in Strings</p>
+      <p>When you are defining a string you must start and end with a single or double quote. What happens when you need
+        a literal quote: " or ' inside of your string?</p>
+      <p>In JavaScript, you can escape a quote from considering it as an end of string quote by placing a backslash
+        (&#92) in front of the quote.</p>
+      <pre class="codeExample">
+        <code>
+  const sampleStr = "Alan said, &#92"Peter is learning JavaScript&#92".";
+          
+  console.log(sampleStr)
+        </code>
+      </pre>
+      <p>
+        This signals to JavaScript that the following quote is not the end of the string, but should instead appear
+        inside the string. So if you were to print this to the console, you would get:
+      </p>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">Alan said, "Peter is learning JavaScript".</p>
+      <br>
+      <p class="subHeader">Quoting Strings with Single Quotes</p>
+      <p>
+        <em>String</em> values in JavaScript may be written with single or double quotes, as long as you start and end
+        with the same type of quote. Unlike some other programming languages, single and double quotes work the same in
+        JavaScript.
+      </p>
+      <pre class="codeExample">
+        <code>
+  const doubleQuoteStr = "This is a string";
+
+  const singleQuoteStr = 'This is also a string';
+        </code>
+      </pre>
+      <p>
+        The reason why you might want to use one type of quote over the other is if you want to use both in a string.
+        This might happen if you want to save a conversation in a string and have the conversation in quotes. Another
+        use for it would be saving an <span class="operator">&lta&gt</span> tag with various attributes in quotes, all
+        within a string.
+      </p>
+      <pre class="codeExample">
+        <code>
+  const conversation = 'Fin exclaims to Jake, "Algebraic"';
+        </code>
+      </pre>
+      <p>However, this becomes a problem if you need to use the outermost quotes within it. Remember, a string has the
+        same kind of quote at the beginning and end. But if you have that same quote somewhere in the middle, the string
+        will stop early and throw an error.</p>
+      <pre class="codeExample">
+            <code>
+  const goodStr = 'Jake asks Finn, "Hey, let&#92's go on an adventure?"';
+
+  const badStr = 'Finn responds, "Let's go!"';
+            </code>
+          </pre>
+      <p>Here badStr will throw an error.</p>
+      <p>In the goodStr above, you can use both quotes safely by using the backslash &#92 as an escape character.</p>
+      <p class="subHeader note">Note:</p>
+      <p>The backslash &#92 should not be confused with the forward slash &#47. They do not do the same thing.</p>
+      <br>
+      <p class="subHeader">Escape Sequences in Strings</p>
+      <p>Quotes are not the only characters that can be escaped inside a string. There are two reasons to use escaping
+        characters:</p>
+      <OL>
+        <li>To allow you to use characters you may not otherwise be able to type out, such as a carriage return.</li>
+        <li>To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.</li>
+      </OL>
+      <br>
+      <table>
+        <tr>
+          <td>code</td>
+          <td>output</td>
+        </tr>
+        <tr>
+          <td>&#92'</td>
+          <td>single quote</td>
+        </tr>
+        <tr>
+          <td>&#92"</td>
+          <td>double quote</td>
+        </tr>
+        <tr>
+          <td>&#92&#92</td>
+          <td>backslash</td>
+        </tr>
+        <tr>
+          <td>&#92n</td>
+          <td>newline</td>
+        </tr>
+        <tr>
+          <td>&#92r</td>
+          <td>carriage return</td>
+        </tr>
+        <tr>
+          <td>&#92t</td>
+          <td>tab</td>
+        </tr>
+        <tr>
+          <td>&#92b</td>
+          <td>word boundry</td>
+        </tr>
+        <tr>
+          <td>&#92f</td>
+          <td>form feed</td>
+        </tr>
+      </table>
+      <p class="subHeader note">Note:</p>
+      <p>The backslash itself must be escaped in order to display as a backslash.</p>
+      <br>
+      <p class="subHeader">Concatenating Strings with Plus Operator</p>
+      <p>In JavaScript, when the + operator is used with a String value, it is called the <em>concatenation</em>
+        operator. You can build a new string out of other strings by <em>concatenating</em> them together.</p>
+      <pre class="codeExample">
+        <code>
+  const ourStr = "I come first. " + "I come second.";
+
+  console.log(ourStr)
+        </code>
+      </pre>
+      <p>This will print to the console as.</p>
+      <p class="consoleDisplay">I come first. I come second.</p>
+      <p class="subHeader note">Note:</p>
+      <p>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add
+        them yourself.</p>
+      <p class="subHeader">Concatenating Strings with the Plus Equals Operator</p>
+      <p>We can also use the += operator to concatenate a string onto the end of an existing string variable. This can
+        be very helpful to break a long string over several lines.</p>
+      <pre class="codeExample">
+        <code>
+  let ourStr = "I come first. ";
+  ourStr += "I come second.";
+          
+  console.log(ourStr);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">I come first. I come second.</p>
+      <p class="subHeader note">Note:</p>
+      <p>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add
+        them yourself.</p>
+      <p class="subHeader">Constructing Strings with Variables</p>
+      <p>Sometimes you will need to build a string. By using the concatenation operator (+), you can insert one or more
+        variables into a string you're building.</p>
+      <pre class="codeExample">
+        <code>
+  const ourName = "freeCodeCamp";
+  const ourStr = "Hello, our name is " + ourName + ", how are you?";
+
+  console.log(ourName);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">Hello, our name is freeCodeCamp, how are you?</p>
+      <br>
+      <p class="subHeader">Appending Variables to Strings</p>
+      <p>Just as we can build a string over multiple lines out of string literals, we can also append variables to a
+        string using the plus equals (+=) operator.</p>
+      <pre class="codeExample">
+        <code>
+  const anAdjective = "awesome!";
+  let ourStr = "freeCodeCamp is ";
+  ourStr += anAdjective;
+
+  console.log(ourStr)
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">freeCodeCamp is awesome!</p>
+      <br>
+      <p class="subHeader">Find the Length of a String</p>
+      <p>You can find the length of a String value by writing .length after the string variable or string literal.</p>
+      <p class="subHeader note">string literal</p>
+      <pre class="codeExample">
+        <code>
+  console.log("Alan Peter".length);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">10</p>
+      <p class="subHeader note">string variable</p>
+      <pre class="codeExample">
+        <code>
+  const firstName = "Ada";
+
+  console.log(firstName<span class="attribute">.length</span>);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">3</p>
+      <br>
+      <p class="subHeader">Bracket Notation to Find the First Character in a String</p>
+      <p><em>Bracket notation</em> is a way to get a character at a specific index within a string.</p>
+      <p>Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0.
+        This is referred to as <em>Zero-based</em> indexing.</p>
+      <p>For example, the character at index 0 in the word Charles is C. So if const firstName = "Charles", you can get
+        the value of the first letter of the string by using firstName[0].</p>
+      <pre class="codeExample">
+        <code>
+  const firstName = "Charles";
+  const firstLetter = firstName[0];
+
+  console.log(firstLetter);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">C</p>
+      <br>
+      <p class="subHeader">Understand String Immutability</p>
+      <p>In JavaScript, String values are immutable, which means that they cannot be altered once created.</p>
+      <p>For example, the following code:</p>
+      <pre class="codeExample">
+        <code>
+  let myStr = "Bob";
+  myStr[0] = "J";
+        </code>
+      </pre>
+      <p>cannot change the value of myStr to Job, because the contents of myStr cannot be altered. Note that this does
+        not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be
+        changed. The only way to change myStr would be to assign it with a new string, like this:</p>
+      <pre class="codeExample">
+        <code>
+  let myStr = "Bob";
+  myStr = "Job";
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">Bracket Notation to Find the Nth Character in a String</p>
+      <p>You can also use <em>bracket notation</em> to get the character at other positions within a string.</p>
+      <p>Remember that computers start counting at 0, so the first character is actually the zeroth character.</p>
+      <pre class="codeExample">
+        <code>
+  const firstName = "Ada";
+  const secondLetterOfFirstName = firstName[1];
+
+  console.log(secondLetterOfFirstName);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">d</p>
+      <br>
+      <p class="subHeader">Bracket Notation to Find the Last Character in a String</p>
+      <p>In order to get the last letter of a string, you can subtract one from the string's length.</p>
+      <p>For example, if const firstName = "Ada", you can get the value of the last letter of the string by using
+        firstName[firstName.length - 1].</p>
+      <pre class="codeExample">
+        <code>
+  const firstName = "Ada";
+  const lastLetter = firstName[firstName.length - 1];
+
+  console.log(lastLetter);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">a</p>
+      <br>
+      <p class="subHeader">Bracket Notation to Find the Nth-to-Last Character in a String</p>
+      <p>You can use the same principle we just used to retrieve the last character in a string to retrieve the
+        Nth-to-last character.</p>
+      <p>For example, you can get the value of the third-to-last letter of the const firstName = "Augusta" string by
+        using firstName[firstName.length - 3]</p>
+      <pre class="codeExample">
+        <code>
+  const firstName = "Augusta";
+  const thirdToLastLetter = firstName[firstName.length - 3];
+
+  console.log(thirdToLastLetter);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">s</p>
+    </section>
+    <br>
+    <section class="chapter" id="arrays">
+      <h2>Arrays</h2>
+      <p class="subHeader">Store Multiple Values in one Variable using JavaScript Arrays</p>
+      <p>With JavaScript array variables, we can store several pieces of data in one place.</p>
+      <p>You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a
+        comma between each entry, like this:</p>
+      <pre class="codeExample">
+        <code>
+  const sandwich = ["peanut butter", "jelly", "bread"];
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">Nest one Array within Another Array</p>
+      <p>You can also nest arrays within other arrays, like below:</p>
+      <pre class="codeExample">
+        <code>
+  const teams = [["Bulls", 23], ["White Sox", 45]];
+        </code>
+      </pre>
+      <p>This is also called a <em>multi-dimensional</em> array.</p>
+      <br>
+      <p class="subHeader">Access Array Data with Indexes</p>
+      <p>We can access the data inside arrays using <em>indexes</em>.</p>
+      <p>Array indexes are written in the same bracket notation that strings use, except that instead of specifying a
+        character, they are specifying an entry in the array. Like strings, arrays use <em>zero-based</em> indexing, so
+        the first element in an array has an index of 0.</p>
+      <pre class="codeExample">
+        <code>
+  const array = [50, 60, 70];
+  array[0];
+  const data = array[1];
+        </code>
+      </pre>
+      <p>array[0] is now 50, and data has the value 60.</p>
+      <p class="subHeader note">Note:</p>
+      <p>There shouldn't be any spaces between the array name and the square brackets, like array [0]. Although
+        JavaScript is able to process this correctly, this may confuse other programmers reading your code.</p>
+      <br>
+      <p class="subHeader">Modify Array Data With Indexes</p>
+      <p>Unlike strings, the entries of arrays are <em>mutable</em> and can be changed freely, even if the array was
+        declared with const.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [50, 40, 30];
+  ourArray[0] = 15;
+
+  console.log(ourArray);
+        </code>
+      </pre>
+      <p>This will print to the console as</p>
+      <p class="consoleDisplay">[15, 40, 30]</p>
+      <br>
+      <p class="subHeader">Access Multi-Dimensional Arrays With Indexes</p>
+      <p>One way to think of a <em>multi-dimensional</em> array, is as an <em>array</em> of <em>arrays</em>. When you
+        use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first
+        level) array, and each additional pair of brackets refers to the next level of entries inside.</p>
+      <pre class="codeExample">
+        <code>
+  const arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14]
+  ];
+
+  console.log(arr[3]);
+  console.log(arr[3][0]);
+  console.log(arr[3][0][1]);
+        </code>
+      </pre>
+      <p>This will print to the console respectively as</p>
+      <p class="consoleDisplay">[[10, 11, 12], 13, 14]</p>
+      <p class="consoleDisplay">[10, 11, 12]</p>
+      <p class="consoleDisplay">[11]</p>
+      <p class="subHeader note">Note:</p>
+      <p>There shouldn't be any spaces between the array name and the square brackets, like array [0][0] and even this
+        array [0] [0] is not allowed.</p>
+      <br>
+      <p class="subHeader">Manipulate Arrays With push()</p>
+      <p>An easy way to append data to the end of an array is via the .push() function.</p>
+      <p>.push() takes one or more parameters and "pushes" them onto the end of the array.</p>
+      <pre class="codeExample">
+        <code>
+  const arr1 = [1, 2, 3];
+  arr1.push(4);
+
+  const arr2 = ["Stimpson", "J", "cat"];
+  arr2.push(["happy", "joy"]);
+
+  console.log(arr1);
+  console.log(arr2);
+        </code>
+      </pre>
+      <p>This will print to the console respectively as;</p>
+      <p class="consoleDisplay">[1, 2, 3, 4]</p>
+      <p class="consoleDisplay">["Stimpson", "J", "cat", ["happy", "joy"]]</p>
+      <br>
+      <p class="subHeader">Manipulate Arrays With pop()</p>
+      <p>Another way to change the data in an array is with the .pop() function.</p>
+      <p>.pop() is used to pop a value off of the end of an array. We can store this popped off value by assigning it to
+        a variable. In other words, .pop() removes the last element from an array and returns that element.</p>
+      <p>Any type of entry can be popped off of an array - numbers, strings, even nested arrays.</p>
+      <p>This will remove the last element in the array</p>
+      <pre class="codeExample">
+        <code>
+  const threeArr = [1, 4, 6];
+  threeArr.pop();
+
+  console.log(threeArr);
+        </code>
+      </pre>
+      <p>This will print to the console as;</p>
+      <p class="consoleDisplay">[1, 4]</p>
+      <p class="subHeader note">Note:</p>
+      <p>When using this code you won't know what element was removed.</p>
+      <p class="subHeader note">Best Practice</p>
+      <p>If you want to know what element was removed you can do so by putting it into a variable and use the .pop() on
+        the array.</p>
+      <pre class="codeExample">
+        <code>
+  const threeArr = [1, 4, 6];
+  const popElementIntoVar = threeArr.pop();
+
+  console.log(threeArr);
+  console.log(popElementIntoVar);
+        </code>
+      </pre>
+      <p>This will print to the console respectively as;</p>
+      <p class="consoleDisplay">[1, 4]</p>
+      <p class="consoleDisplay">6</p>
+      <br>
+      <p class="subHeader">Manipulate Arrays With shift()</p>
+      <p>pop() always removes the last element of an array. What if you want to remove the first?</p>
+      <p>That's where .shift() comes in. It works just like .pop(), except it removes the first element instead of the
+        last.</p>
+      <p>This will remove the first element in the array</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = ["Stimpson", "J", ["cat"]];
+  ourArray.shift();
+
+  console.log(ourArray;)
+        </code>
+      </pre>
+      <p>This will print to the console as;</p>
+      <p class="consoleDisplay">["J", ["cat"]]</p>
+      <br>
+      <p class="subHeader note">Best Practice</p>
+      <p>If you want to know what element was removed you can do so by putting it into a variable and use the .shift()
+        on the array.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = ["Stimpson", "J", ["cat"]];
+  const shiftElementIntoVar = ourArray.shift();
+
+  console.log(ourArray);
+  console.log(shiftElementIntoVar);
+        </code>
+      </pre>
+      <p>This will print to the console respectively as;</p>
+      <p class="consoleDisplay">["J", ["cat"]]</p>
+      <p class="consoleDisplay">Stimpson</p>
+      <br>
+      <p class="subHeader">Manipulate Arrays With unshift()</p>
+      <p>Not only can you shift elements off of the beginning of an array, you can also unshift elements to the
+        beginning of an array i.e. add elements in front of the array.</p>
+      <p>.unshift() works exactly like .push(), but instead of adding the element at the end of the array, unshift()
+        adds the element at the beginning of the array.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = ["Stimpson", "J", "cat"];
+  ourArray.shift();
+  ourArray.unshift("Happy");
+        </code>
+      </pre>
+      <p>After the shift, ourArray would have the value ["J", "cat"]. After the unshift, ourArray would have the value
+        ["Happy", "J", "cat"].</p>
+    </section>
+    <br>
+    <section class="chapter" id="functions">
+      <h2>Functions</h2>
+      <p class="subHeader">Write Reusable JavaScript with Functions</p>
+      <p>In JavaScript, we can divide up our code into reusable parts called functions.</p>
+      <p>Here's an example of a function:</p>
+      <pre class="codeExample">
+        <code>
+  function functionName() {
+    console.log("Hello World");
+  }
+
+  functionName();
+        </code>
+      </pre>
+      <p>You can call or <em>invoke</em> this function by using its name followed by parentheses, like this:
+        functionName(); Each time the function is called it will print out the message Hello World on the dev console.
+        All of the code between the curly braces will be executed every time the function is called.</p>
+      <p>This will print to the console as;</p>
+      <p class="consoleDisplay">Hello World</p>
+      <br>
+      <p class="subHeader">Passing Values to Functions with Arguments</p>
+      <p><em>Parameters</em> are variables that act as placeholders for the values that are to be input to a function
+        when it is called. When a function is defined, it is typically defined along with one or more parameters. The
+        actual values that are input (or "<em>passed</em>") into a function when it is called are known as
+        <em>arguments</em>.
+      </p>
+      <p>Here is a function with two parameters, param1 and param2:</p>
+      <pre class="codeExample">
+        <code>
+  function testFun(param1, param2) {
+    console.log(param1, param2);
+  }
+
+  testFun("Hello", "World");
+        </code>
+      </pre>
+      <p>Then we can call testFun like this: testFun("Hello", "World");. We have passed two string arguments, Hello and
+        World. Inside the function, param1 will equal the string Hello and param2 will equal the string World. Note that
+        you could call testFun again with different arguments and the parameters would take on the value of the new
+        arguments.</p>
+      <p>This will print to the console as;</p>
+      <p class="consoleDisplay">Hello World</p>
+      <br>
+      <p>This is the same code but using numbers as arguments and doing a simple math evaluation to find the sum of the
+        two parameters.</p>
+      <pre class="codeExample">
+        <code>
+  function testFun(a, b) {
+    console.log(a + b);
+  }
+
+  testFun(7, 9);
+        </code>
+      </pre>
+      <p>This will print to the console as;</p>
+      <p class="consoleDisplay">16</p>
+      <br>
+      <p class="subHeader">Return a Value from a Function with Return</p>
+      <p>We can pass values into a function with <em>arguments</em>. You can use a return statement to send a value back
+        out of a function.</p>
+      <pre class="codeExample">
+          <code>
+  function plusThree(num) {
+    return num + 3;
+  }
+
+  const answer = plusThree(5);
+          </code>
+        </pre>
+      <p>answer has the value 8.</p>
+      <p>plusThree takes an <em>argument</em> for num and returns a value equal to num + 3.</p>
+      <br>
+      <p class="subHeader">Global Scope and Functions</p>
+      <p>In JavaScript, <em>scope</em> refers to the visibility of variables. Variables which are defined outside of a
+        function block have <em>Global</em> scope. This means, they can be seen everywhere in your JavaScript code.</p>
+      <p>Variables which are declared without the <span class="keyword">let</span> or <span class="keyword">const</span>
+        keywords are automatically created in the global scope. This can create unintended consequences elsewhere in
+        your code or when running a function again. You should always declare your variables with <span
+          class="keyword">let</span> or <span class="keyword">const</span>.</p>
+      <br>
+      <p class="subHeader">Local Scope and Functions</p>
+      <p>Variables which are declared within a function, as well as the function parameters, have local scope. That
+        means they are only visible within that function.</p>
+      <p>Here is a function myTest with a local variable called loc.</p>
+      <pre class="codeExample">
+          <code>
+  function myTest() {
+    const loc = "foo";
+    console.log(loc);
+  }
+
+  myTest();
+  console.log(loc);
+          </code>
+        </pre>
+      <p>The myTest() function call will display the string foo in the console from the console.log(loc) inside the
+        function. The console.log(loc) line will throw an error, as loc is not defined outside of the function.</p>
+      <br>
+      <p class="subHeader">Global vs. Local Scope in Functions</p>
+      <pre class="codeExample">
+          <code>
+  const someVar = "Hat";
+
+  function myFun() {
+    const someVar = "Head";
+    return someVar;
+  }
+
+  console.log(myFun())
+          </code>
+        </pre>
+      <p>The function myFun will return the string Head because the local version of the variable is present.</p>
+      <br>
+      <p class="subHeader">Understanding Undefined Value returned from a Function</p>
+      <p>A function can include the return statement but it does not have to. In the case that the function doesn't have
+        a return statement, when you call it, the function processes the inner code but the returned value is undefined.
+      </p>
+      <pre class="codeExample">
+          <code>
+  let sum = 0;
+
+  function addSum(num) {
+    sum = sum + num;
+  }
+
+  addSum(3);
+
+  console.log(sum); // displays 3
+  console.log(addSum()) // displays undefined
+          </code>
+        </pre>
+      <p>addSum is a function without a return statement. The function will change the global sum variable but the
+        returned value of the function is undefined.</p>
+      <p class="subHeader">Assignment with a Returned Value</p>
+      <p>If you'll recall from our discussion of Storing Values with the Assignment Operator, everything to the right of
+        the equal sign is resolved before the value is assigned. This means we can take the return value of a function
+        and assign it to a variable.</p>
+      <pre class="codeExample">
+          <code>
+  let ourSum;
+  let newSum;
+
+  function sum(a, b) {
+    return a + b;
+  }
+
+  ourSum = sum(5, 12);
+  newSum = sum(3, 20);
+
+  console.log(ourSum);
+  console.log(newSum);
+          </code>
+        </pre>
+      <p>This will print to the dev console respectively as;</p>
+      <p class="consoleDisplay">17</p>
+      <p class="consoleDisplay">23</p>
+      <p>we call the sum function, which returns a value of 17 and assigns it to the ourSum variable.</p>
+      <p>we then call the sum function again with new arguments, which returns a value of 23 and assigns it to the
+        newSum variable.</p>
+
+
+
+
+    </section>
+    <br>
+    <section class="chapter" id="booleans">
+      <h2>Booleans</h2>
+      <p class="subHeader">Understanding Boolean Values</p>
+      <p>Another data type is the <em>Boolean</em>. Booleans may only be one of two values: true or false. They are
+        basically little on-off switches, where true is on and false is off. These two states are mutually exclusive.
+      </p>
+      <p class="subHeader note">Note:</p>
+      <p>Boolean values are never written with quotes. The strings "true" and "false" are not Boolean and have no
+        special meaning in JavaScript.</p>
+      <pre class="codeExample">
+        <code>
+  function welcomeToBooleans() {
+    return true;
+  }
+        </code>
+      </pre>
+    </section>
+    <br>
+    <section class="chapter" id="conditionals">
+      <h2>Conditionals</h2>
+      <p class="subHeader">Use Conditional Logic with If Statements</p>
+      <P>if statements are used to make decisions in code. The keyword if tells JavaScript to execute the code in the
+        curly braces under certain conditions, defined in the parentheses. These conditions are known as Boolean
+        conditions and they may only be true or false.</P>
+      <P>When the condition evaluates to true, the program executes the statement inside the curly braces. When the
+        Boolean condition evaluates to false, the statement inside the curly braces will not execute.</P>
+      <br>
+      <p class="subHeader note">Pseudocode:</p>
+      <pre class="codeExample">
+        <code>
+  if (condition is true) {
+    statement is executed
+  }
+        </code>
+      </pre>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  function test (myCondition) {
+    if (myCondition) {
+      return "It was true";
+    }
+    return "It was false";
+ }
+          
+  test(true);
+  test(false);
+        </code>
+      </pre>
+      <p>test(true) returns the string It was true, and test(false) returns the string It was false.</p>
+      <p>When test is called with a value of true, the if statement evaluates myCondition to see if it is true or not.
+        Since it is true, the function returns It was true. When we call test with a value of false, myCondition is not
+        true and the statement in the curly braces is not executed and the function returns It was false.</p>
+      <br>
+      <p class="subHeader">Comparison with the Equality Operator</p>
+      <p>There are many <em>comparison operators</em> in JavaScript. All of these operators return a boolean true or
+        false value.</p>
+      <p>The most basic operator is the equality operator <span class="operator">==</span>. The equality operator
+        compares two values and returns true if they're equivalent or false if they are not. Note that equality is
+        different from assignment (<span class="operator">=</span>), which assigns the value on the right of the
+        operator to a variable on the left.</p>
+      <pre class="codeExample">
+        <code>
+  function equalityTest(myVal) {
+    if (myVal == 10) {
+      return "Equal";
+    }
+    return "Not Equal";
+  }
+        </code>
+      </pre>
+      <p>If myVal is equal to 10, the equality operator returns true, so the code in the curly braces will execute, and
+        the function will return Equal. Otherwise, the function will return Not Equal. In order for JavaScript to
+        compare two different <em>data types</em> (for example, numbers and strings), it must convert one type to
+        another. This is known as <strong>Type Coercion</strong>. Once it does, however, it can compare terms as
+        follows:</p>
+      <pre class="codeExample">
+        <code>
+  1   ==  1
+  1   ==  2
+  1   == '1'
+  "3" ==  3
+           
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to true, false, true, and true.</p>
+      <br>
+      <p class="subHeader">Basic JavaScript
+        Comparison with the Strict Equality Operator</p>
+      <p>Strict equality (<span class="operator">===</span>) is the counterpart to the equality operator (<span
+          class="operator">==</span>). However, unlike the equality operator, which attempts to convert both values
+        being compared to a common type, the strict equality operator does not perform a type conversion.</p>
+      <p>If the values being compared have different <em>data types</em>, they are considered unequal, and the strict
+        equality operator will return false.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  3 === 3
+  3 === "3"
+        </code>
+      </pre>
+      <p>These conditions would return true and false respectively.</p>
+      <p>In the second example, 3 is a Number <em>data type</em> and '3' is a String <em>data type</em>.</p>
+      <br>
+      <p class="subHeader">Comparing different values with typeof</p>
+      <p>If the values being compared are not of the same type, the equality operator will perform a type conversion,
+        and then evaluate the values. However, the strict equality operator will compare both the data type and value
+        as-is, without converting one type to the other.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  3 == "3"
+  3 === "3"
+        </code>
+      </pre>
+      <p>3 == "3" returns true because JavaScript performs type conversion from string to number. 3 === "3" returns
+        false because the types are different and type conversion is not performed.</p>
+      <p class="subHeader note">Note:</p>
+      <p>In JavaScript, you can determine the type of a variable or a value with the <em>typeof</em> operator, as
+        follows:</p>
+      <pre class="codeExample">
+        <code>
+  typeof 3
+  typeof "3"
+        </code>
+      </pre>
+      <p>typeof 3 returns the string number, and typeof '3' returns the string string.</p>
+      <br>
+      <p class="subHeader">Comparison with the Inequality Operator</p>
+      <p>The inequality operator (<span class="operator">!=</span>) is the opposite of the equality operator. It means
+        not equal and returns false where equality would return true and vice versa. Like the equality operator, the
+        inequality operator will convert data types of values while comparing.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  1 != 2
+  1 != "1"
+  1 != '1'
+  1 != true
+  1 != false
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to true, false, false, false, and false.</p>
+      <br>
+      <p class="subHeader">Comparison with the Strict Inequality Operator</p>
+      <p>The <em>strict inequality operator</em> (<span class="operator">!==</span>) is the logical opposite of the
+        strict equality operator. It means "Strictly Not Equal" and returns false where strict equality would return
+        true and vice versa. The strict inequality operator will not convert data types.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  3 !== 3
+  3 !== '3'
+  4 !== 3
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to false, true, and true.</p>
+      <br>
+      <p class="subHeeader">Comparison with the Greater Than Operator</p>
+      <p>The greater than operator (<span class="operator">&gt</span>) compares the values of two numbers. If the number
+        to the left is greater than the number to the right, it returns true. Otherwise, it returns false.</p>
+      <p>Like the equality operator, the greater than operator will convert data types of values while comparing.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  5 > 3
+  7 > '3'
+  2 > 3
+  '1' > 9
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to true, true, false, and false.</p>
+      <br>
+      <p class="subHeader">Comparison with the Greater Than Or Equal To Operator</p>
+      <p>The greater than or equal to operator (<span class="operator">&gt=</span>) compares the values of two numbers.
+        If the number to the left is greater than or equal to the number to the right, it returns true. Otherwise, it
+        returns false.</p>
+      <p>Like the equality operator, the greater than or equal to operator will convert data types while comparing.</p>
+      <pre class="codeExample">
+        <code>
+  6  >=  6
+  7  >= '3'
+  2  >=  3
+  '7' >=  9
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to true, true, false, and false.</p>
+      <br>
+      <p class="subHeader">Comparison with the Less Than Operator</p>
+      <p>The less than operator (<span class="operator">&lt</span>) compares the values of two numbers. If the number to
+        the left is less than the number to the right, it returns true. Otherwise, it returns false. Like the equality
+        operator, the less than operator converts <em>data types</em> while comparing.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  2  &lt 5
+  '3' &lt 7
+  5  &lt 5
+  3  &lt 2
+  '8' &lt 4
+        </code>
+      </pre>
+      <p>In order, these expressions would evaluate to true, true, false, false, and false.</p>
+      <br>
+      <p class="subHeader">Comparison with the Less Than Or Equal To Operator</p>
+      <p>The less than or equal to operator (<span class="operator">&lt=</span>) compares the values of two numbers. If
+        the number to the left is less than or equal to the number to the right, it returns true. If the number on the
+        left is greater than the number on the right, it returns false. Like the equality operator, the less than or
+        equal to operator converts <em>data types</em>.</p>
+        <p class="subHeader note">Example:</p>
+        <pre class="codeExample">
+          <code>
+  4  &lt= 5
+  '7' &lt= 7
+  5  &lt= 5
+  3  &lt= 2
+  '8' &lt= 4
+          </code>
+        </pre>
+        <p>In order, these expressions would evaluate to true, true, true, false, and false.
+        </p>
+        <br>
+        <p class="subHeader">Comparisons with the Logical "And" Operator</p>
+        <p>Sometimes you will need to test more than one thing at a time. The <em>logical and</em> operator (<span class="operator">&&</span>) returns true if and only if the operands to the left and right of it are true.</p>
+        <p>The same effect could be achieved by nesting an if statement inside another if:</p>
+        <pre class="codeExample">
+          <code>
+  if (num &gt 5) {
+    if (num &lt 10) {
+      return "Yes";
+    }
+  }
+  return "No";
+          </code>
+        </pre>
+        <p>will only return Yes if num is greater than 5 and less than 10. The same logic can be written as:</p>
+        <pre class="codeExample">
+          <code>
+  if (num > 5 && num < 10) {
+    return "Yes";
+  }
+  return "No";
+          </code>
+        </pre>
+        <br>
+        <p class="subHeader">Comparisons with the Logical "Or" Operator</p>
+        <p>The <em>logical or</em> operator (<span class="operator">||</span>) returns true if either of the <em>operands</em> is true. Otherwise, it returns false.</p>
+        <p>The <em>logical or</em> operator is composed of two pipe symbols: (<span class="operator">||</span>). This can typically be found between your Backspace and Enter keys.</p>
+        <p>The pattern below should look familiar from prior waypoints:</p>
+        <pre class="codeExample">
+          <code>
+  if (num &gt 10) {
+    return "No";
+  }
+  if (num &lt 5) {
+    return "No";
+  }
+  return "Yes";
+          </code>
+        </pre>
+        <p>will return Yes only if num is between 5 and 10 (5 and 10 included). The same logic can be written as:</p>
+        <pre class="codeExample">
+          <code>
+  if (num &gt 10 <span class="operator">||</span> num &lt 5) {
+    return "No";
+  }
+  return "Yes";
+          </code>
+        </pre>
+    </section>
+    <br>
+    <section class="chapter" id="elseStatements">
+      <h2>Else and If Else Statements</h2>
+      <p>When a condition for an if statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an else statement, an alternate block of code can be executed.</p>
+      <pre class="codeExample">
+        <code>
+  if (num &gt 10) {
+    return "Bigger than 10";
+  } else {
+    return "10 or Less";
+  } 
+        </code>
+      </pre>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/introducing-else-if-statements" target="_blank" title="FCC 'else if' Statements">
+        <p class="subHeader">Else If Statements</p>
+      </a>
+      <p>If you have multiple conditions that need to be addressed, you can chain <span class="keyword">if</span> statements together with <span class="keyword">else if</span> statements.</p>
+      <pre class="codeExample">
+        <code>
+  if (num &gt 15) {
+    <span class="operator">return</span> "Bigger than 15"<span class="punctuation">;</span>
+  } else if (num &lt 5) {
+    <span class="operator">return</span> "Smaller than 5"<span class="punctuation">;</span>
+  } else {
+    <span class="operator">return</span> "Between 5 and 15"<span class="punctuation">;</span>
+  }
+        </code>
+      </pre>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements" target="_blank" title="FCC 'chaining else if' Statements">
+        <p class="subHeader">Chaining If Else Statements</p>
+      </a>
+      <p>if/else statements can be chained together for complex logic. Here is pseudocode of multiple chained if / else if statements:</p>
+      <p class="subHeader note">Pseudocode</p>
+      <pre class="codeExample">
+        <code>
+  if (condition1) {
+    statement1
+  } else if (condition2) {
+    statement2
+  } else if (condition3) {
+    statement3
+  . . .
+  } else {
+    statementN
+  } 
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  function testSize(num) {
+    if (num &lt 5) {
+      return "Tiny";
+    } else if (num &lt 10) {
+      return "Small";
+    } else if (num &lt 15) {
+      return "Medium";
+    } else if (num &lt 20) {
+      return "Large";
+    } else if (num &gt= 20) {
+      return "Huge";
+    }
+  }
+
+  testSize(0);
+  testSize(4);
+  testSize(5);
+  testSize(8);
+  testSize(10);
+  testSize(14);
+  testSize(15);
+  testSize(17);
+  testSize(20);
+  testSize(25);
+        </code>
+      </pre>
+      <p>This will return the strings respectively: Tiny, Tiny, Small, Small, Medium, Medium, Large, Large, Huge, Huge.</p>
+    </section>
+    <br>
+    <section class="chapter" id="switchStatements">
+      <h2>Switch Statements</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/selecting-from-many-options-with-switch-statements" target="_blank" title="FCC 'switch statements'">
+        <p class="subHeader">Selecting from Many Options with Switch Statements</p>
+      </a>
+      <p>If you have many options to choose from, use a <em>switch</em> statement. A switch statement tests a value and can have many <em>case</em> statements which define various possible values. Statements are executed from the first matched case value until a break is encountered.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  switch(lowercaseLetter) {
+    case "a":
+      console.log("A");
+      break;
+    case "b":
+      console.log("B");
+      break;
+  }
+        </code>
+      </pre>
+      <p>case values are tested with <em>strict equality</em> (<span class="operator">===</span>). The break tells JavaScript to stop executing statements. If the break is omitted, the next statement will be executed.</p>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/adding-a-default-option-in-switch-statements" target="_blank" title="FCC 'default switch statement'">
+        <p class="subHeader">Default Option in Switch Statement</p>
+      </a>
+      <p>In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.</p>
+      <p>A default statement should be the last case.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  switch (num) {
+    case value1:
+      statement1;
+      break;
+    case value2:
+      statement2;
+      break;
+  ...
+    default:
+      defaultStatement;
+      break;
+  }
+        </code>
+      </pre>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/multiple-identical-options-in-switch-statements" target="_blank" title="FCC 'identical options in switch statements'">
+        <p class="subHeader">Multiple Identical Options in Switch Statements</p>
+      </a>
+      <p>If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  let result = "";
+  switch(val) {
+    case 1:
+    case 2:
+    case 3:
+      result = "1, 2, or 3";
+      break;
+    case 4:
+      result = "4 alone";
+  }
+        </code>
+      </pre>
+      <p>Cases for 1, 2, and 3 will all produce the same result.</p>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/replacing-if-else-chains-with-switch" target="_blank" title="FCC 'replacing else if chains with switch'">
+        <p class="subHeader">Replacing If Else Chains with Switch</p>
+      </a>
+      <p>If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:</p>
+      <pre class="codeExample">
+        <code>
+  if (val === 1) {
+    answer = "a";
+  } else if (val === 2) {
+    answer = "b";
+  } else {
+    answer = "c";
+  }   
+        </code>
+      </pre>
+      <p>can be replaced with:</p>
+      <pre class="codeExample">
+        <code>
+  switch(val) {
+    case 1:
+      answer = "a";
+      break;
+    case 2:
+      answer = "b";
+      break;
+    default:
+      answer = "c";
+  } 
+        </code>
+      </pre>
+    </section>
+    <br>
+    <section class="chapter" id="objects">
+      <h2>javaScript Objects</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects" target="_blank" title="FCC 'javaScript Objects'">
+      <p class="subHeader">Build JavaScript Objects</p>
+    </a>
+    <p>You may have heard the term <em>object</em> before.</p>
+    <p>Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.</p>
+    <p>Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.</p>
+    <p class="subHeader note">Here's a sample cat object:</p>
+    <pre class="codeExample">
+      <code>
+  const cat = {
+    "name": "Whiskers",
+    "legs": 4,
+    "tails": 1,
+    "enemies": ["Water", "Dogs"]
+  };
+      </code>
+    </pre>
+    <p>In this example, all the properties are stored as strings, such as name, legs, and tails. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties.</p>
+    <p class="subHeader note">Here's another object:</p>
+    <pre class="codeExample">
+      <code>
+  const anotherObject = {
+    make: "Ford",
+    5: "five",
+    "model": "focus"
+  };
+      </code>
+    </pre>
+    <p>However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-dot-notation"
+    target="_blank" title="FCC 'Dot Notation'">
+      <p class="subHeader">Accessing Object Properties with Dot Notation</p>
+    </a>
+    <p>There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.</p>
+    <p>Dot notation is what you use when you know the name of the property you're trying to access ahead of time.</p>
+    <p>Here is a sample of using dot notation (.) to read an object's property:</p>
+    <pre class="codeExample">
+      <code>
+  const myObj = {
+    prop1: "val1",
+    prop2: "val2"
+  };
+        
+  const prop1val = myObj.prop1;
+  const prop2val = myObj.prop2;
+      </code>
+    </pre>
+    
+      <p>
+      prop1val would have a value of the string val1, and prop2val would have a value of the string val2.
+      </p>
+    
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-bracket-notation" target="_blank" title="FCC 'Bracket Notation">
+      <p class="subHeader">Accessing Object Properties with Bracket Notation</p>
+    </a>
+    <p>
+      The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+    </p>
+    <p>However, you can still use bracket notation on object properties without spaces.</p>
+    <p>Here is a sample of using bracket notation to read an object's property:</p>
+    <pre class="codeExample">
+      <code>
+  const myObj = {
+    "Space Name": "Kirk",
+    "More Space": "Spock",
+    "NoSpace": "USS Enterprise"
+  };
+        
+  myObj["Space Name"];
+  myObj['More Space'];
+  myObj["NoSpace"];        
+      </code>
+    </pre>
+    <p>
+      myObj["Space Name"] would be the string Kirk, myObj['More Space'] would be the string Spock, and myObj["NoSpace"] would be the string USS Enterprise.
+    </p>
+    <p class="subHeader note">Note:</p>
+    <p>
+      Property names with spaces in them must be in quotes (single or double).
+    </p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank" title="FCC 'Object Properties with Variables'">
+      <p class="subHeader">Accessing Object Properties with Variables</p>
+    </a>
+    <p>Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.</p>
+    <p>Here is an example of using a variable to access a property:</p>
+    <pre class="codeExample">
+      <code>
+  const dogs = {
+    Fido: "Mutt",
+    Hunter: "Doberman",
+    Snoopie: "Beagle"
+  };
+        
+  const myDog = "Hunter";
+  const myBreed = dogs[myDog];
+  console.log(myBreed);
+        
+      </code>
+    </pre>
+    <p>The string Doberman would be displayed in the console.</p>
+    <p>Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:</p>
+    <pre class="codeExample">
+      <code>
+  const someObj = {
+    propName: "John"
+  };
+        
+  function propPrefix(str) {
+    const s = "prop";
+    return s + str;
+  }
+        
+  const someProp = propPrefix("Name");
+  console.log(someObj[someProp]);
+      </code>
+    </pre>
+    <p>someProp would have a value of the string propName, and the string John would be displayed in the console.</p>
+    <p class="subHeader note">Note:</p>
+    <p>we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/updating-object-properties" target="_blank" title="FCC 'Updating Object Properties'">
+      <p class="subHeader">Updating Object Properties</p>
+    </a>
+    <p>After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.</p>
+    <p>For example, let's look at ourDog:</p>
+    <p>Since he's a particularly happy dog, let's change his name to the string Happy Camper. Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting Camper, we'll get his new name, Happy Camper.</p>
+    <pre class="codeExample">
+      <code>
+  const ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"]
+  };
+
+  ourDog["name"] = "Happy Camper";
+
+  console.log(ourDog.name) <span class="comment">// or</span>
+  console.log(ourDog['name'])
+      </code>
+    </pre>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/add-new-properties-to-a-javascript-object" target="_blank" title="FCC 'New Properties to an Object'">
+      <p class="subHeader">Add New Properties to a JavaScript Object</p>
+    </a>
+    <p>You can add new properties to existing JavaScript objects the same way you would modify them.</p>
+    <p>Here's how we would add a bark property to ourDog:</p>
+    <pre class="codeExample">
+      <code>
+  ourDog.bark = "bow-wow";
+
+  or
+
+  ourDog["bark"] = "bow-wow";
+      </code>
+    </pre>
+    <p>Now when we evaluate ourDog.bark, we'll get his bark, bow-wow.</p>
+    <p class="subHeader note">Example:</p>
+    <pre class="codeExample">
+      <code>
+  const ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"]
+  };
+        
+  ourDog.bark = "bow-wow";
+      </code>
+    </pre>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/delete-properties-from-a-javascript-object" target="_blank" title="FCC 'Delete Properties from an Object'">
+      <p class="subHeader">Delete Properties from a JavaScript Object</p>
+    </a>
+    <p>We can also delete properties from objects like this:</p>
+    <pre class="codeExample">
+      <code>
+  delete ourDog.bark;
+      </code>
+    </pre>
+    <p class="subHeader note">Example:</p>
+    <pre class="codeExample">
+      <code>
+  const ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"],
+    "bark": "bow-wow"
+  };
+        
+  delete ourDog.bark;        
+      </code>
+    </pre>
+    <p>After the last line shown above, ourDog looks like:</p>
+    <pre class="codeExample">
+      <code>
+  {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"]
+  } 
+      </code>
+    </pre>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/using-objects-for-lookups" target="_blank" title="FCC 'Objects for Lookups'">
+      <p>Using Objects for Lookups</p>
+    </a>
+    <p>Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.</p>
+    <p>Here is an example of a simple reverse alphabet lookup:</p>
+    <pre class="codeExample">
+      <code>
+  const alpha = {
+    1:"Z",
+    2:"Y",
+    3:"X",
+    4:"W",
+    ...
+    24:"C",
+    25:"B",
+    26:"A"
+  };
+        
+  alpha[2];
+  alpha[24];
+
+  const value = 2;
+  alpha[value];
+      </code>
+    </pre>
+    <p>alpha[2] is the string Y, alpha[24] is the string C, and alpha[value] is the string Y.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/testing-objects-for-properties" target="_blank" title="FCC 'Testing Objects for Properties'">
+      <p class="subHeader">Testing Objects for Properties</p>
+    </a>
+    <p>Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.</p>
+    <p class="subHeader note">Example:</p>
+    <pre class="codeExample">
+      <code>
+  const myObj = {
+    top: "hat",
+    bottom: "pants"
+  };
+        
+  myObj.hasOwnProperty("top");
+  myObj.hasOwnProperty("middle");        
+      </code>
+    </pre>
+    <p>The first hasOwnProperty returns true, while the second returns false.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank" title="FCC 'Manipulating Complex Objects'">
+      <p class="subHeader">Manipulating Complex Objects</p>
+    </a>
+    <p>Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <em>strings, numbers, booleans, arrays, functions,</em> and <em>objects</em>.</p>
+    <p>Here's an example of a complex data structure:</p>
+    <pre class="codeExample">
+      <code>
+  const ourMusic = [
+    {
+      "artist": "Daft Punk",
+      "title": "Homework",
+      "release_year": 1997,
+      "formats": [ 
+        "CD", 
+        "Cassette", 
+        "LP"
+      ],
+      "gold": true
+    }
+  ];
+      </code>
+    </pre>
+    <p>This is an array which contains one object inside. The object has various pieces of metadata about an album. It also has a nested formats array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, "artist": "Daft Punk" is a property that has a key of artist and a value of Daft Punk. JavaScript Object Notation or JSON is a related data interchange format used to store data.</p>
+    <P class="subHeader note">JSON Example:</P>
+    <pre class="codeExample">
+      <code>
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD",
+      "Cassette",
+      "LP"
+    ],
+    "gold": true
+  }
+      </code>
+    </pre>
+    <p class="subHeader note">Note:</p>
+    <p>You will need to place a comma after every object in the array, unless it is the last object in the array.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects" target="_blank" title="FCC 'Accessing Nested Objects'">
+      <p class="subHeader">Accessing Nested Objects</p>
+    </a>
+    <p>The sub-properties of objects can be accessed by chaining together the dot or bracket notation.</p>
+    <p>Here is a nested object:</p>
+    <pre class="codeExample">
+      <code>
+  const ourStorage = {
+    "desk": {
+      "drawer": "stapler"
+    },
+    "cabinet": {
+      "top drawer": { 
+        "folder1": "a file",
+        "folder2": "secrets"
+      },
+      "bottom drawer": "soda"
+    }
+  };
+        
+  ourStorage.cabinet["top drawer"].folder2;
+  ourStorage.desk.drawer;
+      </code>
+    </pre>
+    <p>ourStorage.cabinet["top drawer"].folder2 would be the string secrets, and ourStorage.desk.drawer would be the string stapler.</p>
+    <br>
+    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays" target="_blank" title="FCC 'Accessing Nested Arrays'">
+      <p>Accessing Nested Arrays</p>
+    </a>
+    <P>As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.</P>
+    <P>Here is an example of how to access a nested array:</P>
+    <pre class="codeExample">
+      <code>
+  const ourPets = [
+    {
+      animalType: "cat",
+      names: [
+        "Meowzer",
+        "Fluffy",
+        "Kit-Cat"
+      ]
+    },
+    {
+      animalType: "dog",
+      names: [
+        "Spot",
+        "Bowser",
+        "Frankie"
+      ]
+    }
+  ];
+
+  ourPets[0].names[1];
+  ourPets[1].names[0];
+      </code>
+    </pre>
+    <p>ourPets[0].names[1] would be the string Fluffy, and ourPets[1].names[0] would be the string Spot.</p>
+    </section>
+    <br>
+    <section class="chapter" id="loops">
+      <h2>javaScript Loops</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-while-loops" target="_blank" title="FCC 'Iterate with While Loops'">
+        <p class="subHeader">Iterate with JavaScript While Loops</p>
+      </a>
+      <p>You can run the same code multiple times by using a loop.</p>
+      <p>The first type of loop we will learn is called a while loop because it runs while a specified condition is true and stops once that condition is no longer true.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+  let i = 0;
+
+  while (i &lt 5) {
+    ourArray.push(i);
+    i++;
+  }
+        </code>
+      </pre>
+      <p>
+        In the code example above, the while loop will execute 5 times and append the numbers 0 through 4 to ourArray.
+      </p>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops" target="_blank" title="FCC 'Iterate with For Loops'">
+        <p class="subHeader">Iterate with JavaScript For Loops</p>
+      </a>
+      <p>The most common type of JavaScript loop is called a for loop because it runs for a specific number of times.</p>
+      <p>For loops are declared with three optional expressions separated by semicolons:</p>
+      <p>for (a; b; c), where a is the initialization statement, b is the condition statement, and c is the final expression.</p>
+      <p>The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.</p>
+      <p>The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When the condition is false at the start of the iteration, the loop will stop executing. This means if the condition starts as false, your loop will never execute.</p>
+      <p>The final expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter.</p>
+      <p>In the following example we initialize with i = 0 and iterate while our condition i < 5 is true. We'll increment i by 1 in each loop iteration with i++ as our final expression.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+
+  for (let i = 0; i &lt 5; i++) {
+    ourArray.push(i);
+  }
+        </code>
+      </pre>
+      <p>ourArray will now have the value [0, 1, 2, 3, 4].</p>
+      <br>
+      <p class="subHeader">
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-odd-numbers-with-a-for-loop" target="_blank" title="FCC 'Iterate Odd Numbers with a For Loop'">
+        Iterate Odd or Even Numbers With a For Loop</a>
+      </p>
+      <p>For loops don't have to iterate one at a time. By changing our final-expression, we can count by even numbers.</p>
+      <p>We'll start at i = 0 and loop while i < 10. We'll increment i by 2 each loop with i += 2.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+
+  for (let i = 0; i &lt 10; i += 2) {
+    ourArray.push(i);
+  }
+        </code>
+      </pre>
+      <p>ourArray will now contain [0, 2, 4, 6, 8].</p>
+      <p>Let's change our initialization so we can count by odd numbers.</p>
+      <pre class="codeExample">
+        <code>
+  const myArray = [];
+
+  for (let i = 1; i &lt= 9; i += 2) {
+    myArray.push(i);
+  }
+        </code>
+      </pre>
+      <p>myArray will now contain [1, 3, 5, 7, 9].</p>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/count-backwards-with-a-for-loop" target="_blank" title="Count Backwards with a For Loop">Count Backwards with a For Loop</a>
+      </p>
+      <p>A for loop can also count backwards, so long as we can define the right conditions.</p>
+      <p>In order to decrement by two each iteration, we'll need to change our initialization, condition, and final expression.</p>
+      <p>We'll start at i = 10 and loop while i > 0. We'll decrement i by 2 each loop with i -= 2.</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+
+  for (let i = 10; i &gt 0; i -= 2) {
+    ourArray.push(i);
+  }
+        </code>
+      </pre>
+      <p>ourArray will now contain [10, 8, 6, 4, 2].</p>
+      <p>Let's change our initialization and final expression so we can count backwards by twos to create an array of descending odd numbers.</p>
+      <pre class="codeExample">
+        <code>
+  const myArray = [];
+
+  for (let i = 9; i &gt 0; i -= 2) {
+    myArray.push(i);
+  }
+        </code>
+      </pre>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-through-an-array-with-a-for-loop" target="_blank" title="FCC 'Iterate an Array with a For Loop'">Iterate Through an Array with a For Loop</a>
+      </p>
+      <p>A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:</p>
+      <pre class="codeExample">
+        <code>
+  const arr = [10, 9, 8, 7, 6];
+
+  for (let i = 0; i &lt arr.length; i++) {
+    console.log(arr[i]);
+  }
+        </code>
+      </pre>
+      <p>Remember that arrays have zero-based indexing, which means the last index of the array is length - 1. Our condition for this loop is i &lt arr.length, which stops the loop when i is equal to length. In this case the last iteration is i === 4 i.e. when i becomes equal to arr.length - 1 and outputs 6 to the console. Then i increases to 5, and the loop terminates because i &lt arr.length is false.</p>
+      <p class="subHeader note">Example:</p>
+      <p>This will declare and initialize a variable total to 0. It will use a for loop to add the value of each element of the myArr array to the let variable total.</p>
+      <pre class="codeExample">
+        <code>
+  const myArr = [2, 3, 4, 5, 6];
+
+  let total = 0;
+  for (let i = 0; i &lt myArr.length; i++) {
+    total += myArr[i];
+  }
+        </code>
+      </pre>
+      <p>total should equal 20</p>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops" target="_blank" title="FCC 'Nesting For Loops'">Nesting For Loops</a>
+      </p>
+      <p>If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:</p>
+      <pre class="codeExample">
+        <code>
+  const arr = [
+    [1, 2], [3, 4], [5, 6]
+  ];
+
+  for (let i = 0; i &lt arr.length; i++) {
+    for (let j = 0; j &lt arr[i].length; j++) {
+      console.log(arr[i][j]);
+    }
+  }
+        </code>
+      </pre>
+      <p>
+        This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.
+      </p>
+      <br>
+      <p>The function multiplyAll will return the product of all the numbers in the sub-arrays of arr.</p>
+      <pre class="codeExample">
+        <code>
+  function multiplyAll(arr) {
+    let product = 1; <span class="comment">// if you set the multipy variable to 0 it will always equal zero.</span>
+    for (let i = 0; i &lt arr.length; i++) {
+      for (let j = 0; j &lt arr[i].length; j++) {
+        product = product * arr[i][j];
+      }
+    }
+        </code>
+      </pre>
+     <br>
+     <p class="subHeader">
+       <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-do---while-loops" target="_blank" title="FCC 'Do While Loops'">Iterate with JavaScript Do...While Loops</a>
+     </p>
+     <p>
+       The next type of loop you will learn is called a do...while loop. It is called a do...while loop because it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true.
+      </p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+  let i = 0;
+
+  do {
+    ourArray.push(i);
+    i++;
+  } while (i &lt 5);
+        </code>
+      </pre>
+      <p>The example above behaves similar to other types of loops, and the resulting array will look like [0, 1, 2, 3, 4]. However, what makes the do...while different from other loops is how it behaves when the condition fails on the first check. Let's see this in action: Here is a regular while loop that will run the code in the loop as long as i &lt 5:</p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = []; 
+  let i = 5;
+
+  while (i &lt 5) {
+    ourArray.push(i);
+    i++;
+  }
+        </code>
+      </pre>
+      <p>
+        In this example, we initialize the value of ourArray to an empty array and the value of i to 5. When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
+      </p>
+      <pre class="codeExample">
+        <code>
+  const ourArray = [];
+  let i = 0;
+
+  do {
+    ourArray.push(i);
+    i++;
+  } while (i &lt 5);
+        </code>
+      </pre>
+      <p>In this case, we initialize the value of i to 5, just like we did with the while loop. When we get to the next line, there is no condition to evaluate, so we go to the code inside the curly braces and execute it. We will add a single element to the array and then increment i before we get to the condition check. When we finally evaluate the condition i &lt 5 on the last line, we see that i is now 6, which fails the conditional check, so we exit the loop and are done. At the end of the above example, the value of ourArray is [5]. Essentially, a do...while loop ensures that the code inside the loop will run at least once.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  const myArray = [];
+  let i = 10;
+
+  do {
+    myArray.push(i);
+    i++;
+  } while (i &lt 10);
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion">Replace Loops using Recursion</a>
+      </p>
+      <p>
+        Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
+      </p>
+      <pre class="codeExample">
+        <code>
+  function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i &lt n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+        </code>
+      </pre>
+      <p>
+        However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+      </p>
+      <pre class="codeExample">
+        <code>
+  function multiply(arr, n) {
+    if (n &lt= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+        </code>
+      </pre>
+      <p>
+        The recursive version of multiply breaks down like this. In the base case, where n &lt= 0, it returns 1. For larger values of n, it calls itself, but with n - 1. That function call is evaluated in the same way, calling multiply again until n &lt= 0. At this point, all the functions can return and the original multiply returns the answer.
+      </p>
+      <p class="subHeader note">Note:</p>
+      <p>Recursive functions must have a <em>base case</em> when they return without calling the function again (in this example, when n &lt= 0), otherwise they can never finish executing.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  function sum(arr, n) {
+    if(n &lt= 0) {
+      return 0;
+    } else {
+      return sum(arr, n - 1) + arr[n - 1];
+    }
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">What loop do I use for an Arrays?</p>
+      <div class="use">
+        <p class="note">Array:</p>
+        <p>The most common loop to use with an Array is a <span class="operator">for</span> loop</p>
+        <picture>
+          
+        </picture>
+        <pre class="codeExample">
+          <code>
+  var myArray = [];
+            
+  for(let i = 0, i &lt 5; i++) {
+    myArray.push(i);
+  }
+  console.log(myArray);
+          </code>
+        </pre>
+      </div>
+      <br>
+      <p class="subHeader">What loop do I use for an Object?</p>
+      <div class="use">
+        <p class="note">Object:</p>
+        <p>The most common loop to use with an Object is a <span class="operator">for..in</span> loop</p>
+        <picture>
+  
+        </picture>
+        <pre class="codeExample">
+          <code>
+  var myObjects = {
+    'Canada': 'Sasquatch',
+    'Nepal': 'Yeti',
+    'Scotland': 'Loch Ness Monster'
+  };
+
+  for (let property in myObjects) {
+    // displays the property name
+    console.log(property);
+
+    // displays the property value
+    console.log(myObjects[property]);
+
+    // displays both key/value pair
+    console.log("In", property, "we have the", myObjects[property]);
+  }
+          </code>
+        </pre>
+      </div>
+    </section>
+    <br>
+    <section class="chapter" id="jsMath">
+      <h2>javaScript Math</h2>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/generate-random-fractions-with-javascript" target="_blank" title="FCC 'Random Fractions with javaScript'">Generate Random Fractions with JavaScript</a>
+      </p>
+      <p>Random numbers are useful for creating random behavior.</p>
+      <P>JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). Thus Math.random() can return a 0 but never return a 1.</P>
+      <p class="subHeader note">Note</p>
+      <p>
+        Like Storing Values with the Assignment Operator, all function calls will be resolved before the return executes, so we can return the value of the Math.random() function.
+      </p>
+      <pre class="codeExample">
+        <code>
+  function randomFraction() {
+    return Math.random();
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-with-javascript" target="_blank" title="FCC 'Random Whole Numbers'">Generate Random Whole Numbers with JavaScript</a>
+      </p>
+      <p>It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.</p>
+      <ol>
+        <li>Use Math.random() to generate a random decimal.</li>
+        <li>Multiply that random decimal by 20.</li>
+        <li>Use another function, Math.floor() to round the number down to its nearest whole number.</li>
+      </ol>    
+      <p>Remember that Math.random() can never quite return a 1 and, because we're rounding down, it's impossible to actually get 20. This technique will give us a whole number between 0 and 19.</p>      
+      <p>Putting everything together, this is what our code looks like:</p>
+      <pre class="codeExample">
+        <code>
+  Math.floor(Math.random() * 20);
+        </code>
+      </pre>
+      <p>In the next example we use this technique to generate and return a random whole number between 0 and 9.</p>
+      <pre class="codeExample">
+        <code>
+  function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-within-a-range" target="_blank" title="FCC ''">Generate Random Whole Numbers within a Range</a>
+      </p>
+      <p>
+        Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
+      </p>
+      <p>To do this, we'll define a minimum number min and a maximum number max.</p>
+      <p>Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:</p>
+      <pre class="codeExample">
+        <code>
+  Math.floor(Math.random() * (max - min + 1)) + min
+        </code>
+      </pre>
+      <p>The function called randomRange takes a range myMin and myMax and returns a random whole number that's greater than or equal to myMin, and is less than or equal to myMax, inclusive.</p>
+      <pre class="codeExample">
+        <code>
+  function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function" target="_blank" title="FCC 'parseInt Function'">Use the parseInt Function</a>
+      </p>
+      <p>The parseInt() function parses a string and returns an integer. Here's an example:</p>
+      <pre class="codeExample">
+        <code>
+  const a = parseInt("007");
+        </code>
+      </pre>
+      <p>The above function converts the string 007 to the integer 7. If the first character in the string can't be converted into a number, then it returns NaN.</p>
+      <pre class="codeExample">
+        <code>
+  function convertToInteger(str) {
+    return parseInt(str)
+  }
+          
+  convertToInteger("56");
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function-with-a-radix" target="_blank" title="FCC 'parseInt Function with Radix'">Use the parseInt Function with a Radix</a>
+      </p>
+      <p>The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.</p>
+      <p>The function call looks like:</p>
+      <pre class="codeExample">
+        <code>
+  parseInt(string, radix);
+        </code>
+      </pre>
+      <p>And here's an example:</p>
+      <pre class="codeExample">
+        <code>
+  const a = parseInt("11", 2);
+        </code>
+      </pre>
+      <p>Usin a Function to turn a binary number to an integer</p>
+      <pre class="codeExample">
+        <code>
+  function convertToInteger(str) {
+    return parseInt(str, 2)
+  }
+            
+    convertToInteger("10011");
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator" target="_blank" title="FCC 'Condition Operator'"></a>
+      </p>
+      <p>The <em>conditional operator</em>, also called the <em>ternary operator</em>, can be used as a one line if-else expression.</p>
+      <p>The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.</p>
+      <p>The following function uses an if/else statement to check a condition:</p>
+      <pre class="codeExample">
+        <code>
+  function findGreater(a, b) {
+    if(a &gt b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater or equal";
+    }
+  }
+        </code>
+      </pre>
+      <p>This can be re-written using the conditional operator:</p>
+      <pre class="codeExample">
+        <code>
+  function findGreater(a, b) {
+    return a &gt b ? "a is greater" : "bgreater or equal";
+  }
+        </code>
+      </pre>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators" target="_blank" title="FCC 'Multiple Condional Operators'">Use Multiple Conditional (Ternary) Operators</a>
+      </p>
+      <p>In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.</p>
+      <p>The following function uses if, else if, and else statements to check multiple conditions:</p>
+      <pre class="codeExample">
+        <code>
+  function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    }
+    else if (a &gt b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+        </code>
+      </pre>
+      <p>The above function can be re-written using multiple conditional operators:</p>
+      <pre class="codeExample">
+        <code>
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a &gt b) ? "a is greater" 
+      : "b is greater";
+  }
+        </code>
+      </pre>
+      <p>It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. </p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" : (a &gt b) ? "a is greater" : "b is greater";
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-countdown" target="_blank" title="FCC 'Recursion to Create a Countdown'"></a>
+      </p>
+      <p>In a previous challenge, you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with 1 through the number passed to the function.</p>
+      <p>As mentioned in the previous challenge, there will be a base case. The base case tells the recursive function when it no longer needs to call itself. It is a simple case where the return value is already known. There will also be a recursive call which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.</p>
+      <p>For example, say you want to write a recursive function that returns an array containing the numbers 1 through n. This function will need to accept an argument, n, representing the final number. Then it will need to call itself with progressively smaller values of n until it reaches 1. You could write the function as follows:</p>
+      <pre class="codeExample">
+        <code>
+  function countup(n) {
+    if (n &lt 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
+  }
+  console.log(countup(5));
+        </code>
+      </pre>
+      <p>The value [1, 2, 3, 4, 5] will be displayed in the console.</p>
+      <p>At first, this seems counterintuitive since the value of n <em>decreases</em>, but the values in the final array are <em>increasing</em>. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].</p>
+      <p>We have defined a function called countdown with one parameter (n). The function will use recursion to return an array containing the integers n through 1 based on the n parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with n = 5 should return the array [5, 4, 3, 2, 1]. Your function must use recursion by calling itself and must not use loops of any kind.</p>
+      <pre class="codeExample">
+        <code>
+  function countdown(n){
+    if(n &lt 1) {
+      return [];
+    } else {
+      const countDownArray = countdown(n - 1);
+      countDownArray.unshift(n)
+      return countDownArray;
+    }
+  }
+        </code>
+      </pre>
+      <br>
+      <p class="subHeader">
+        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-recursion-to-create-a-range-of-numbers" target="_blank" title="FCC 'Using Recursion to Create a Range of Numbers'"></a>
+      </p>
+      <p>Continuing from the previous challenge, we provide you another opportunity to create a recursive function to solve a problem.</p>
+      <p>We have defined a function named rangeOfNumbers with two parameters. The function will return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. The function will use recursion by calling itself and not use loops of any kind. It will also work for cases where both startNum and endNum are the same.</p>
+    </section>
+    <section class="chapter" id="moreFunctionStuff">
+      <h2>More Function Stuff!</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/returning-boolean-values-from-functions" target="_blank" title="FCC 'booleans from functions'">
+        <p class="subHeader">Returning Boolean Values from Functions</p>
+      </a>
+      <p>You may recall from <em>Comparison with the Equality Operator</em> that all comparison operators return a boolean true or false value.</p>
+      <p>Sometimes people use an if/else statement to do a comparison, like this:</p>
+      <pre class="codeExample">
+        <code>
+  function isEqual(a, b) {
+    if (a === b) {
+      return true;
+    } else {
+      return false;
+    }
+  }  
+        </code>
+      </pre>
+      <p>But there's a better way to do this. Since === returns true or false, we can return the result of the comparison:</p>
+      <pre class="codeExample">
+        <code>
+  function isEqual(a, b) {
+    return a === b;
+  }  
+        </code>
+      </pre>
+      <br>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/return-early-pattern-for-functions" target="_blank" title="FCC 'Return Early Pattern for Functions'">
+        <p class="subHeader">Return Early Pattern for Functions</p>
+      </a>
+      <p>When a return statement is reached, the execution of the current function stops and control returns to the calling location.</p>
+      <p class="subHeader note">Example:</p>
+      <pre class="codeExample">
+        <code>
+  function myFun() {
+    console.log("Hello");
+    return "World";
+    console.log("byebye")
+  }
+  myFun();
+        </code>
+      </pre>
+      <p>The above will display the string Hello in the console, and return the string World. The string byebye will never display in the console, because the function exits at the return statement.</p>
+    </section>
+    <br>
+    <section class="chapter" id="codeChallenges">
+      <h2>FCC Basic JS Code Challenges</h2>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/word-blanks" target="_blank" title="FCC Code Challenge - Word Blanks">
+        <p class="subHeader">Word Blanks</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/shopping-list" target="_blank" title="FCC Code Challenge - Shopping List">
+        <p class="subHeader">Shopping List</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line" target="_blank" title="FCC Code Challenge - Stand in Line">
+        <p class="subHeader">Stand in Line</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/golf-code" target="_blank" title="FCC Code Challenge - Golf Code">
+        <p class="subHeader">Golf Code</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/counting-cards" target="_blank" title="FCC Code Challenge - Counting Cards">
+        <p class="subHeader">Counting Cards</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/record-collection" target="_blank" title="FCC Code Challenge - Record Collection">
+        <p class="subHeader">Record Collection</p>
+      </a>
+      <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup" target="_blank" title="FCC Code Challenge - Profile Lookup">
+        <p class="subHeader">Profile Lookup</p>
+      </a>
+    </section>
+  </main>
+  <aside>
+    <h2>Other Video Resourses & Courses</h2>
+    <div class="tutor">
+      <p class="subHeader">Traversy Media:</p>
+      <p><a href="https://www.udemy.com/user/brad-traversy/">Udemy - Traversy Media</a></p>
+      <p> <a href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA">Youtube - Traversy Media</a></p>
+      <p> <a href="https://www.traversymedia.com/">Web Site - Traversy Media</a></p>
+      <picture>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </picture>
+    </div>
+
+  </aside>
+  <button id="topBtn">
+      <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" title="Top of Page" />
+    </button>
+  <footer class="pageFooter">
+    <h2>Christopher T. Guy <span>O/A</span> Softcorp Industries</h2>
+  </footer>
+</body>
+
+</html>

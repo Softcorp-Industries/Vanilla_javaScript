@@ -1,55 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="main.js" type="module" defer></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <title>javaScript</title>
-</head>
-<body data-darkMode='light'>
-    <nav class="mainNav">
-        <h2>Vanilla JS</h2>
-        <ul class="navBar">
-            <li class="navBar__list-item"><a href="#" title="TOP of PAGE">Home</a></li>
-            <li class="navBar__list-item"><a href="https://softcorp-industries.github.io/javaScript_Basics/" target="_blank" title="FCC Notes JS Basics">javaScript Basics</a></li>
-            <li class="navBar__list-item"><a href="https://softcorp-industries.github.io/javaScript_ES6/" target="_blank" title="FCC Notes ES6">javaScript ES6</a></li>
-            <li class="navBar__list-item"><a href="https://softcorp-industries.github.io/Regular_Expressions/" target="_blank" title="FCC Notes Regular Expressions">javaScript RegEx</a></li>
-            <li class="navBar__list-item"><a href="https://softcorp-industries.github.io/javaScript_AJAX/" target="_blank" title="FCC Notes Regular Expressions">javaScript AJAX</a></li>
-        </ul>
+  </head>
+
+  <body data-darkMode="light">
+    <nav class="main-nav">
+      <h2>Vanilla JS</h2>
+      <ul class="navBar">
+        <li class="navBar__list-item">
+          <a href="#" title="TOP of PAGE">Home</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="jsBasics.html" title="FCC Notes JS Basics"
+            >javaScript Basics</a
+          >
+        </li>
+        <li class="navBar__list-item">
+          <a href="es6.html" title="FCC Notes ES6">javaScript ES6</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="regex.html" title="FCC Notes Regular Expressions"
+            >javaScript RegEx</a
+          >
+        </li>
+        <li class="navBar__list-item">
+          <a href="dataStructures.html" target="_blank">Data Structures</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="algorithm.html" target="_blank">Algorithms</a>
+        </li>
+        <li class="navBar__list-item">
+          <a
+            href="https://softcorp-industries.github.io/Async_javaScript/"
+            target="_blank"
+            title="FCC Notes Regular Expressions"
+            >Async javaScript</a
+          >
+        </li>
+      </ul>
     </nav>
-    <header class="mainHeader">
-        <div id="darkMode" class="darkMode">
-            <button id="darkModeBtn" class="dmToggle"></button>
-        </div>
-        <h1>Vanilla javaScript</h1>
+    <header class="main-header">
+      <div id="darkMode" class="darkMode">
+        <button id="darkModeBtn" class="dmToggle"></button>
+      </div>
+      <h1>Vanilla javaScript</h1>
     </header>
     <article class="quote">
-        <p>
-          Perfect people don't drink, don't fight, don't lie, don't make mistakes and...don't exist
-        </p>
-        <p class="author">Paulo Coelho</p>
-      </article>
+      <p>
+        Perfect people don't drink, don't fight, don't lie, don't make mistakes
+        and...don't exist
+      </p>
+      <p class="author">Paulo Coelho</p>
+    </article>
     <section class="intro" id="MDNWebDocs">
-        <h2>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
-            title="MDN Web Docs">JavaScript</a>
-        </h2>
-        <p>
-          JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled
-          programming language with first-class functions. While it is most
-          well-known as the scripting language for Web pages, many non-browser
-          environments also use it, such as <a href="https://developer.mozilla.org/en-US/docs/Glossary/Node.js" target="_blank" title="MDN node.js">Node.js</a>, <a href="https://couchdb.apache.org/" target="_blank" title="Apache CouchDB">Apache CouchDB</a> and <a href="https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/" target="_blank" title="Adobe Acrobat">Adobe
-          Acrobat</a>. JavaScript is a prototype-based, multi-paradigm,
-          single-threaded, dynamic language, supporting object-oriented,
-          imperative, and declarative (e.g. functional programming) styles.
-        </p>
+      <h2>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+          target="_blank"
+          title="MDN Web Docs"
+          >JavaScript</a
+        >
+      </h2>
+      <p>
+        JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled
+        programming language with first-class functions. While it is most
+        well-known as the scripting language for Web pages, many non-browser
+        environments also use it, such as
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Glossary/Node.js"
+          target="_blank"
+          title="MDN node.js"
+          >Node.js</a
+        >,
+        <a
+          href="https://couchdb.apache.org/"
+          target="_blank"
+          title="Apache CouchDB"
+          >Apache CouchDB</a
+        >
+        and
+        <a
+          href="https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/"
+          target="_blank"
+          title="Adobe Acrobat"
+          >Adobe Acrobat</a
+        >. JavaScript is a prototype-based, multi-paradigm, single-threaded,
+        dynamic language, supporting object-oriented, imperative, and
+        declarative (e.g. functional programming) styles.
+      </p>
     </section>
     <main>
-        <section class="welcome chapter">
-            <h2>Welcome</h2>
-        </section>
+      <section class="welcome chapter">
+        <h2>Welcome</h2>
+      </section>
     </main>
-</body>
+    <button id="topBtn">
+      <img
+        src="./img/icon/icons8-wide-right-arrow-64.png"
+        alt=""
+        title="Top of Page"
+      />
+    </button>
+    <footer class="pageFooter">
+      <h2>Christopher T. Guy <span>O/A</span> Softcorp Industries</h2>
+    </footer>
+  </body>
 </html>
