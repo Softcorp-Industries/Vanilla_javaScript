@@ -7,46 +7,6 @@
   text-shadow: 0px 0px 2px black;
 }
 
-.intro {
-  margin: auto;
-  padding-top: 1em;
-  width: 90%;
-  max-width: 1200px;
-  margin-bottom: 4em;
-}
-.intro .readMore-top {
-  font-size: 1.2em;
-}
-
-.credit {
-  margin: auto;
-  padding-top: 1em;
-  width: 90%;
-}
-.credit p {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 0.5em;
-  padding-bottom: 0;
-  letter-spacing: 0.3rem;
-  font-size: 2em;
-  display: block;
-}
-.credit p a {
-  text-decoration: none;
-  width: 100%;
-}
-.credit a {
-  display: block;
-  text-align: center;
-}
-.credit p a:hover {
-  color: yellow;
-  text-shadow: 0px 0px 2px black;
-  transform: scale(1.2);
-}
-
 .pageFooter {
   margin-top: 300px;
   padding: 2em 0;
@@ -143,8 +103,10 @@ body[data-darkMode=darkMode] {
 *::before,
 *::after {
   box-sizing: border-box;
-  line-height: 1.4;
-  letter-spacing: 0.05rem;
+}
+
+p {
+  letter-spacing: 1px;
 }
 
 a {
@@ -158,6 +120,7 @@ ul {
 
 li {
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 hr {
@@ -166,17 +129,6 @@ hr {
   background-color: yellow;
   height: 5px;
   border-radius: 5px;
-}
-
-picture {
-  display: none;
-}
-picture iframe {
-  width: 95%;
-  max-width: 560px;
-  max-height: 315px;
-  display: block;
-  margin: auto;
 }
 
 @media (min-width: 1000px) {
@@ -313,31 +265,6 @@ picture iframe {
   transform: scale(2.5);
 }
 
-.btn-readMore {
-  display: flex;
-  align-items: center;
-  padding: 5px 15px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.btn-readMore:hover {
-  background-color: white;
-  border-radius: 10px;
-  transform: scale(1.1);
-}
-
-.readMore-img {
-  margin-left: 5px;
-  width: 15px;
-  transform: rotateZ(90deg);
-}
-
-.readMore-section {
-  display: none;
-}
-
 .chapter {
   margin: auto;
   padding-top: 1.5em;
@@ -375,11 +302,124 @@ picture iframe {
   display: none;
 }
 
+.desktop {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.desktop__monitor {
+  box-shadow: inset -3px -3px 6px rgba(202, 202, 202, 0.6), inset 3px 3px 6px rgba(202, 202, 202, 0.6);
+  margin: auto;
+  padding: 0.4em;
+  border-radius: 0.5rem;
+  background-color: black;
+  text-align: center;
+  width: 560px;
+  height: 355px;
+}
+.desktop__monitor picture {
+  border-radius: 0.5em;
+}
+.desktop__monitor picture iframe {
+  border-radius: 0.5em;
+  display: block;
+  width: 100%;
+}
+.desktop__monitor p {
+  margin-top: 0;
+  padding: 0.25rem;
+  font-size: 12px;
+  color: var(--white);
+}
+.desktop p {
+  font-family: "Audiowide";
+}
+.desktop p span {
+  font-family: "";
+}
+
+.intro {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 4em;
+}
+
+.btn-readMore {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.btn-readMore:hover {
+  background-color: white;
+  border-radius: 10px;
+  transform: scale(1.1);
+}
+
+.readMore-img {
+  margin-left: 5px;
+  width: 15px;
+  transform: rotateZ(90deg);
+}
+
+.readMore-section {
+  display: none;
+}
+
+.readMore-top {
+  font-size: 1.2em;
+}
+
+.credit {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+}
+.credit p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding-bottom: 0;
+  letter-spacing: 0.3rem;
+  font-size: 2em;
+  display: block;
+}
+.credit p a {
+  text-decoration: none;
+  width: 100%;
+}
+.credit a {
+  display: block;
+  text-align: center;
+}
+.credit p a:hover {
+  color: yellow;
+  text-shadow: 0px 0px 2px black;
+  transform: scale(1.2);
+}
+
 .mdnDoc {
+  margin: 2em auto;
   padding: 1.25em;
+  max-width: 800px;
   color: white;
   background-color: black;
   border-radius: 1em;
+}
+
+.authorLink {
+  text-align: right;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: white;
 }
 
 @media (min-width: 700px) {
@@ -408,7 +448,7 @@ picture iframe {
 }
 
 .string {
-  color: orange;
+  color: #ff7b00;
   font-weight: 600;
 }
 
@@ -418,7 +458,7 @@ picture iframe {
 }
 
 .punctuation {
-  color: orange;
+  color: purple;
 }
 
 .comment {
@@ -426,23 +466,29 @@ picture iframe {
 }
 
 .codeExample {
-  margin: 2rem auto;
+  margin: 2em auto;
   width: 90%;
   min-width: 250px;
-  min-height: 100px;
+  min-height: 80px;
   overflow: auto;
   border-left: 5px solid yellow;
   background-color: #c9c9c9;
-  color: var(--black);
 }
 
 .codeExample code {
-  padding: 0.25rem;
   white-space: pre;
   font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.8em;
+  font-family: "Audiowide";
+  letter-spacing: 2px;
+  color: var(--black);
 }
 
+@media (min-width: 1000px) {
+  .codeExample code {
+    font-size: 0.7em;
+  }
+}
 .main-nav {
   position: fixed;
   left: 0;
