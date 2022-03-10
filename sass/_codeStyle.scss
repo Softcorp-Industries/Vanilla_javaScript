@@ -15,7 +15,7 @@
     font-weight: 600;
 }
 .string {
-    color: orange;
+    color: rgb(255, 123, 0);
     font-weight: 600;
 }
 .attribute {
@@ -23,24 +23,31 @@
     font-weight: 600;
 }
 .punctuation {
-    color: orange;
+    color: purple;
 }
 .comment {
     color: grey;
 }
 .codeExample {
-    margin: 2rem auto;
+    margin: 2em auto;
     width: 90%;
     min-width: 250px;
-    min-height: 100px;
+    min-height: 80px;
     overflow: auto;
     border-left: 5px solid yellow;
     background-color: rgb(201, 201, 201);
-    color: var(--black);
 }
 .codeExample code {
-    padding: .25rem;
     white-space: pre;
     font-weight: 600;
-    letter-spacing: 1px;
+    font-size: .8em;
+    font-family: "Audiowide";
+    letter-spacing: 2px;
+    color: var(--black);
+}
+
+@media (min-width: 1000px) {
+    .codeExample code{
+        font-size: .7em;
+    }
 }

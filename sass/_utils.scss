@@ -86,26 +86,4 @@
 #topBtn img:hover {
   transform: scale(2.5);
 }
-.btn-readMore {
-  display: flex;
-  align-items: center;
-  //justify-content: space-evenly;
-  padding: 5px 15px;
-  //padding-left: 15px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-.btn-readMore:hover {
-  background-color: white;
-  border-radius: 10px;
-  transform: scale(1.1);
-}
-.readMore-img {
-  margin-left: 5px;
-  width: 15px;
-  transform: rotateZ(90deg);
-}
-.readMore-section {
-  display: none;
-}
+

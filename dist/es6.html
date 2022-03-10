@@ -19,7 +19,7 @@
       <h2>JS ES6</h2>
       <ul class="navBar">
         <li class="navBar__list-item">
-          <a href="index.html" title="FCC Vanilla javaScript">Home</a>
+          <a href="index.html" title="FCC Vanilla javaScript">Vanilla JS</a>
         </li>
         <li class="navBar__list-item">
           <a href="#es6Variables" title="">ES6 Variables</a>
@@ -28,7 +28,28 @@
           <a href="#arrowFunctions" title="FCC Notes ES6">Arrow Functions</a>
         </li>
         <li class="navBar__list-item">
-          <a href="" title="">Expressions</a>
+          <a href="#classes" title="">Classes</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#symbols" title="">Symbols</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#templateLiterals" title="">Template Literals</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#spreadRest" title="">...Spread & Rest</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#destructuring" title="">Destructuring</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#importExport" title="">Import Export</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#proxies" title="">Proxies</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#mapObject" title="">Map Object</a>
         </li>
       </ul>
     </nav>
@@ -39,37 +60,134 @@
       <h1>javaScript ES6</h1>
     </header>
     <div class="intro">
-      <h2>Welcome to ES6</h2>
-      <p>
-        ECMAScript, or ES, is a standardized version of JavaScript. Because all
-        major browsers follow this specification, the terms ECMAScript and
-        JavaScript are interchangeable.
-      </p>
-      <p>
-        Most of the JavaScript you've learned up to this point was in ES5
-        (ECMAScript 5), which was finalized in 2009. While you can still write
-        programs in ES5, JavaScript is constantly evolving, and new features are
-        released every year.
-      </p>
-      <p>
-        ES6, released in 2015, added many powerful new features to the language.
-        In this course, you'll learn these new features, including arrow
-        functions, destructuring, classes, promises, and modules.
-      </p>
+      <div class="readMore-top">
+        <p>
+          Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
+          my own. I've found several resourses available to anyone wanting to
+          learn web development.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          I use a few different web sites for free courses and reference
+          material, like "Free code Camp", "W3 Schools" and "MDN Web Docs". I
+          use these sites for theory, testing and documentation. I also found
+          lots of videos on YouTube that were great for beginers right up to
+          more advanced programming. I did find the theory and having lectures
+          from videos beneficial but they just didn't complete the learning
+          process, I had to take notes too. I try to reference the sites I used
+          for source material when possible in my notes.
+        </p>
+        <p>
+          I've started to build several reference document web pages to practice
+          building web pages while taking notes on different subjects.
+        </p>
+      </div>
+      <br />
+      <button class="btn-readMore">
+        read more
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
     </div>
+    <section class="welcome chapter">
+      <h2>Welcome to ES6</h2>
+      <div class="readMore-top">
+        <p>
+          ECMAScript, or ES, is a standardized version of JavaScript. Because
+          all major browsers follow this specification, the terms ECMAScript and
+          JavaScript are interchangeable.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          Most of the JavaScript you've learned up to this point was in ES5
+          (ECMAScript 5), which was finalized in 2009. While you can still write
+          programs in ES5, JavaScript is constantly evolving, and new features
+          are released every year.
+        </p>
+        <p>
+          ES6, released in 2015, added many powerful new features to the
+          language. In this course, you'll learn these new features, including
+          arrow functions, destructuring, classes, promises, and modules.
+        </p>
+      </div>
+      <br />
+      <button class="btn-readMore">
+        Read More
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </section>
     <main>
-      <br>
-      <hr>
+      <br />
+      <hr />
       <section class="chapter" id="es6Variables">
         <h2>ES6 Variables</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/1mgLWu69ijU"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>var <span>vs</span> const <span>vs</span> let</p>
+          </section>
+        </div>
+        <br />
         <p class="subHeader">
           <a
             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/compare-scopes-of-the-var-and-let-keywords"
             target="_blank"
             title="FCC "
-            >Compare Scopes of the var and let Keywords</a
+            >Compare Scopes of the var and let Keywords - FCC</a
           >
         </p>
+        <div class="mdnDoc">
+          <p class="subHeader"><span class="keyword">let</span></p>
+          <p>
+            let allows you to declare variables that are limited to the scope of
+            a block statement, or expression on which it is used, unlike the var
+            keyword, which declares a variable globally, or locally to an entire
+            function regardless of block scope. The other difference between var
+            and let is that the latter is initialized to a value only when a
+            parser evaluates it.
+          </p>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p class="subHeader">Global Scope</p>
+          <p>
+            At the top level of programs and functions, let, unlike var, does
+            not create a property on the global object. For example:
+          </p>
+          <pre class="codeExample">
+            <code>
+  var x = 'global';
+  let y = 'global';
+
+  console.log(this.x); // "global"
+  console.log(this.y); // undefined
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
         <p>
           If you are unfamiliar with <span class="keyword">let</span>, check out
           <a
@@ -168,14 +286,27 @@ console.log(printNumTwo());
           values (0, 1, and 2) were created by the let keyword within the loop
           statement.
         </p>
+        <br />
         <p class="subHeader">
           <a
             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/mutate-an-array-declared-with-const"
             target="_blank"
           >
-            Mutate an Array Declared with const
+            Mutate an Array Declared with const - FCC
           </a>
         </p>
+        <div class="mdnDoc">
+          <p class="subHeader"><span class="keyword">const</span></p>
+          <p>
+            Constants are block-scoped, much like variables declared using the
+            let keyword. The value of a constant can't be changed through
+            reassignment (i.e. by using the assignment operator), and it can't
+            be redeclared (i.e. through a variable declaration). However, if a
+            constant is an object or array its properties or items can be
+            updated or removed.
+          </p>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
         <p>The const declaration has many use cases in modern JavaScript.</p>
         <p>
           Some developers prefer to assign all their variables using const by
@@ -205,6 +336,7 @@ console.log(printNumTwo());
           used, you cannot use the variable identifier s to point to a different
           array using the assignment operator.
         </p>
+        <br />
         <p class="subHeader">
           <a
             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/prevent-object-mutation"
@@ -212,6 +344,20 @@ console.log(printNumTwo());
             >Prevent Object Mutation</a
           >
         </p>
+        <div class="mdnDoc">
+          <p class="subHeader">Object.freeze()</p>
+          <p>
+            The Object.freeze() method freezes an object. A frozen object can no
+            longer be changed; freezing an object prevents new properties from
+            being added to it, existing properties from being removed, prevents
+            changing the enumerability, configurability, or writability of
+            existing properties, and prevents the values of existing properties
+            from being changed. In addition, freezing an object also prevents
+            its prototype from being changed. freeze() returns the same object
+            that was passed in.
+          </p>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
         <p>
           As seen in the previous challenge, const declaration alone doesn't
           really protect your data from mutation. To ensure your data doesn't
@@ -236,97 +382,162 @@ console.log(printNumTwo());
   console.log(obj); 
             </code>
         </pre>
-        <p>The obj.review and obj.newProp assignments will result in errors, because our editor runs in strict mode by default, and the console will display the value { name: "FreeCodeCamp", review: "Awesome" }.</p>
-        
+        <p>
+          The obj.review and obj.newProp assignments will result in errors,
+          because our editor runs in strict mode by default, and the console
+          will display the value { name: "FreeCodeCamp", review: "Awesome" }.
+        </p>
       </section>
-      <br>
-      <hr>
+      <br />
+      <hr />
       <section class="chapter" id="arrowFunctions">
         <h2>Arrow Functions</h2>
-        <h3>MDN Web Docs</h3>
-        <p class="subHeader">Arrow function expressions</p>
-        <p>An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations. </p>
-        <br>
-        <p>Differences & Limitations:</p>
-        <ul>
-          <li>Does not have its own bindings to this or super, and should not be used as methods. </li>
-          <li>Does not have new.target keyword.</li>
-          <li>Not suitable for call, apply and bind methods, which generally rely on establishing a scope. </li>
-          <li>Can not be used as constructors.</li>
-          <li>Can not use yield, within its body.</li>
-        </ul>
-        <br>
-        <p class="subHeader">Basic Syntax</p>
-        <p>One param. With simple expression return is not needed:</p>
-        <pre class="codeExample">
-          <code>
-  param => expression
-          </code>
-        </pre>
-        <br>
-        <p>Multiple params require parentheses. With simple expression return is not needed: </p>
-        <pre class="codeExample">
-          <code>
-  (param1, paramN) => expression
-          </code>
-        </pre>
-        <br>
-        <p>Multiline statements require body braces and return:</p>
-        <pre class="codeExample">
-          <code>
-  param => {
-    let a = 1;
-    return a + param;
-  }
-          </code>
-        </pre>
-        <br>
-        <p>Multiple params require parentheses. Multiline statements require body braces and return: </p>
-        <pre class="codeExample">
-          <code>
-  (param1, paramN) => {
-    let a = 1;
-    return a + param1 + paramN;
-  }
-          </code>
-        </pre>
-        <br>
-        <p class="subHeader">Advanced Syntax</p>
-        <p>To return an object literal expression requires parentheses around expression: </p>
-        <pre class="codeExample">
-          <code>
-  params => ({foo: "a"}) // returning the object {foo: "a"}
-          </code>
-        </pre>
-        <br>
-        <p>Rest parameters are supported:</p>
-        <pre class="codeExample">
-          <code>
-  (a, b, ...r) => expression
-          </code>
-        </pre>
-        <p>Default parameters are supported:</p>
-        <pre class="codeExample">
-          <code>
-  (a=400, b=20, c) => expression
-          </code>
-        </pre>
-        <br>
-        <p>Destructuring within params supported:</p>
-        <pre class="codeExample">
-          <code>
-  ([a, b] = [10, 20]) => a + b;  // result is 30
-  ({ a, b } = { a: 10, b: 20 }) => a + b; // result is 30
-          </code>
-        </pre>
-        <br>
-        <p>For a more indepth look at Arrow functions please visit the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" title="MDN Arrow Functions">MDN web docs</a> page.</p>
-        <br>
-        <h3>Free Code Camp</h3>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/22fyYvxz-do"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Arrow Functions</p>
+          </section>
+        </div>
+        <div class="mdnDoc">
+          <p class="subHeader">Arrow functions</p>
+          <p>
+            An arrow function expression is a compact alternative to a
+            traditional function expression, but is limited and can't be used in
+            all situations.
+          </p>
+          <p><strong>Differences & Limitations:</strong></p>
+          <ul>
+            <li>
+              Does not have its own bindings to this or super, and should not be
+              used as methods.
+            </li>
+            <li>Does not have new.target keyword.</li>
+            <li>
+              Not suitable for call, apply and bind methods, which generally
+              rely on establishing a scope.
+            </li>
+            <li>Can not be used as constructors.</li>
+            <li>Can not use yield, within its body.</li>
+          </ul>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p class="subHeader">Basic Syntax</p>
+          <p>One param. With simple expression return is not needed:</p>
+          <pre class="codeExample">
+            <code>
+    param => expression
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>
+            Multiple params require parentheses. With simple expression return
+            is not needed:
+          </p>
+          <pre class="codeExample">
+            <code>
+    (param1, paramN) => expression
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>Multiline statements require body braces and return:</p>
+          <pre class="codeExample">
+            <code>
+    param => {
+      let a = 1;
+      return a + param;
+    }
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>
+            Multiple params require parentheses. Multiline statements require
+            body braces and return:
+          </p>
+          <pre class="codeExample">
+            <code>
+    (param1, paramN) => {
+      let a = 1;
+      return a + param1 + paramN;
+    }
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p class="subHeader">Advanced Syntax</p>
+          <p>
+            To return an object literal expression requires parentheses around
+            expression:
+          </p>
+          <pre class="codeExample">
+            <code>
+    params => ({foo: "a"}) // returning the object {foo: "a"}
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>Rest parameters are supported:</p>
+          <pre class="codeExample">
+            <code>
+    (a, b, ...r) => expression
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>Default parameters are supported:</p>
+          <pre class="codeExample">
+            <code>
+    (a=400, b=20, c) => expression
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <div class="mdnDoc">
+          <p>Destructuring within params supported:</p>
+          <pre class="codeExample">
+            <code>
+    ([a, b] = [10, 20]) => a + b;  // result is 30
+    ({ a, b } = { a: 10, b: 20 }) => a + b; // result is 30
+            </code>
+          </pre>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <br />
         <p class="subHeader">
-          <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-arrow-functions-to-write-concise-anonymous-functions">Use Arrow Functions to Write Concise Anonymous Functions</a>
+          <a
+            href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-arrow-functions-to-write-concise-anonymous-functions"
+            >Use Arrow Functions to Write Concise Anonymous Functions</a
+          >
         </p>
-        <p>In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.</p>
+        <p>
+          In JavaScript, we often don't need to name our functions, especially
+          when passing a function as an argument to another function. Instead,
+          we create inline functions. We don't need to name these functions
+          because we do not reuse them anywhere else.
+        </p>
         <p>To achieve this, we often use the following syntax:</p>
         <pre class="codeExample">
           <code>
@@ -336,7 +547,11 @@ console.log(printNumTwo());
   }
           </code>
         </pre>
-        <p>ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use arrow function syntax:</p>
+        <p>
+          ES6 provides us with the syntactic sugar to not have to write
+          anonymous functions this way. Instead, you can use arrow function
+          syntax:
+        </p>
         <pre class="codeExample">
           <code>
   const myFunc = () => {
@@ -345,18 +560,228 @@ console.log(printNumTwo());
   }
           </code>
         </pre>
-        <p>When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword return as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:</p>
+        <p>
+          When there is no function body, and only a return value, arrow
+          function syntax allows you to omit the keyword return as well as the
+          brackets surrounding the code. This helps simplify smaller functions
+          into one-line statements:
+        </p>
         <pre class="codeExample">
           <code>
   const myFunc = () => "value";
           </code>
         </pre>
         <p>This code will still return the string value by default.</p>
-        <br>
-        
+        <br />
       </section>
-      <br>
-      <hr>
+      <br />
+      <hr />
+      <section class="chapter" id="classes">
+        <h2>Classes</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/bq_jZY6Skto"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Classes</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="symbols">
+        <h2>Symbols</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/gANDd4l-G5U"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Symbols</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="templateLiterals">
+        <h2>Template Literals</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/kj8HU-_P2NU"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Template Literals</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="spreadRest">
+        <h2>...spread operator and rest operator</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/iLx4ma8ZqvQ"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>...spread operator and rest operator</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="destructuring">
+        <h2>Destructuring</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/-vR3a11Wzt0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Destructuring</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="importExport">
+        <h2>Import Export Modules</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Jqn_wjkSZwo"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>import/export</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="proxies">
+        <h2>Proxies</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/vExLi5bTt3k"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Proxies</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="mapObject">
+        <h2>Map data structure & Map Object</h2>
+        <div class="tutor">
+          <section class="desktop">
+            <p>Free Code Camp</p>
+            <div class="desktop__monitor">
+              <picture>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/_1BPrCHcjhs"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </picture>
+              <p>Softcorp TV</p>
+            </div>
+            <p>Map Object</p>
+          </section>
+        </div>
+        <p class="subHeader"></p>
+      </section>
     </main>
     <br />
     <br />
@@ -364,7 +789,11 @@ console.log(printNumTwo());
     <br />
     <br />
     <button id="topBtn">
-      <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" title="Top of Page" />
+      <img
+        src="./img/icon/icons8-wide-right-arrow-64.png"
+        alt=""
+        title="Top of Page"
+      />
     </button>
     <footer class="pageFooter">
       <h2>Christopher T. Guy <span>O/A</span> Softcorp Industries</h2>

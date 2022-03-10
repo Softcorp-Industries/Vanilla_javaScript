@@ -8,46 +8,7 @@
     color: yellow;
     text-shadow: 0px 0px 2px black;
 }
-.intro {
-  margin: auto;
-  padding-top: 1em;
-  width: 90%;
-  max-width: 1200px;
-  margin-bottom: 4em;
-  .readMore-top {
-    font-size: 1.2em;
-  }
-}
-.credit {
-    margin: auto;
-    padding-top: 1em;
-    width: 90%;
-    p {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: .5em;
-        padding-bottom: 0;
-        letter-spacing: .3rem;
-        font-size: 2em;
-        display: block;
-        a {
-            text-decoration: none;
-            width: 100%;
-        }
-    }
-    a {
-        display: block;
-        text-align: center;
-    }
-    p {
-        a:hover {
-            color: yellow;
-            text-shadow: 0px 0px 2px black;
-            transform: scale(1.2);
-        }
-    }
-}
+
 .pageFooter {
     margin-top: 300px;
     padding: 2em 0;

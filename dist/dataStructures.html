@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
       rel="stylesheet"
     />
-  <title>Data Structures - javaScript</title>
-  <link rel="stylesheet" href="main.css" />
-  <script type="module" src="main.js" defer></script>
-</head>
-<body>
-  <nav class="main-nav">
-      <h2>JS ES6</h2>
+    <title>Data Structures - javaScript</title>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <h2>Data Structures</h2>
       <ul class="navBar">
         <li class="navBar__list-item">
-          <a href="index.html" title="FCC Vanilla javaScript">Home</a>
+          <a href="index.html" title="FCC Vanilla javaScript">Vanilla JS</a>
         </li>
         <li class="navBar__list-item">
           <a href="#welcome" title="">Welcome</a>
@@ -35,27 +35,78 @@
       <div id="darkMode" class="darkMode">
         <button id="darkModeBtn" class="dmToggle"></button>
       </div>
-      <h1>Regular Expressions</h1>
+      <h1>javaScript Data Structures</h1>
     </header>
-    <div class="intro welcome">
-      <h2>Welcome to Regex</h2>
+    <div class="intro">
+      <div class="readMore-top">
+        <p>
+          In computer science, a data structure is a data organization,
+          management, and storage format that enables efficient access and
+          modification.More precisely, a data structure is a collection of data
+          values, the relationships among them, and the functions or operations
+          that can be applied to the data, i.e., it is an algebraic structure
+          about data.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          Data structures serve as the basis for abstract data types (ADT). The
+          ADT defines the logical form of the data type. The data structure
+          implements the physical form of the data type. Different types of data
+          structures are suited to different kinds of applications, and some are
+          highly specialized to specific tasks. For example, relational
+          databases commonly use B-tree indexes for data retrieval, while
+          compiler implementations usually use hash tables to look up
+          identifiers.
+        </p>
+        <p>
+          Data structures provide a means to manage large amounts of data
+          efficiently for uses such as large databases and internet indexing
+          services. Usually, efficient data structures are key to designing
+          efficient algorithms. Some formal design methods and programming
+          languages emphasize data structures, rather than algorithms, as the
+          key organizing factor in software design. Data structures can be used
+          to organize the storage and retrieval of information stored in both
+          main memory and secondary memory.
+        </p>
+      </div>
+      <button class="btn-readMore">Read More
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </div>
+    <div class="chapter welcome">
+      <h2>Welcome to Basic Data Structures</h2>
+      <p class="subHeader">What is a Data Structure?</p>
       <p>
-        Regular expressions, often shortened to "regex" or "regexp". Regular
-        expressions are very powerful, but can be hard to read because they use
-        special characters to make more complex, flexible matches.
+        Data structures are generally based on the ability of a computer to
+        fetch and store data at any place in its memory, specified by a
+        pointer—a bit string, representing a memory address, that can be itself
+        stored in memory and manipulated by the program. Thus, the array and
+        record data structures are based on computing the addresses of data
+        items with arithmetic operations, while the linked data structures are
+        based on storing addresses of data items within the structure itself.
       </p>
       <p>
-        Regular expressions are patterns used to match character combinations in
-        strings. In JavaScript, regular expressions are also objects. These
-        patterns are used with the exec() and test() methods of RegExp, and with
-        the match(), matchAll(), replace(), replaceAll(), search(), and split()
-        methods of String. This chapter describes JavaScript regular
-        expressions.
+        The implementation of a data structure usually requires writing a set of
+        procedures that create and manipulate instances of that structure. The
+        efficiency of a data structure cannot be analyzed separately from those
+        operations. This observation motivates the theoretical concept of an
+        abstract data type, a data structure that is defined indirectly by the
+        operations that may be performed on it, and the mathematical properties
+        of those operations (including their space and time cost).
       </p>
     </div>
-  <button id="topBtn">
-      <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" title="Top of Page" />
+    <button id="topBtn">
+      <img
+        src="./img/icon/icons8-wide-right-arrow-64.png"
+        alt=""
+        title="Top of Page"
+      />
     </button>
     <footer class="footer">hey</footer>
-</body>
+  </body>
 </html>

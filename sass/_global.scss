@@ -81,8 +81,9 @@ body[data-darkMode="darkMode"] {
 *::before,
 *::after {
   box-sizing: border-box;
-  line-height: 1.4;
-    letter-spacing: .05rem;
+}
+p {
+  letter-spacing: 1px;
 }
 a {
   color: black;
@@ -93,6 +94,7 @@ ul {
 }
 li {
   margin-bottom: .5rem;
+  letter-spacing: 1px;
 }
 hr {
   margin: 2.5em auto;
@@ -101,17 +103,7 @@ hr {
   height: 5px;
   border-radius: 5px;
 }
-picture {
-  display: none;
-  iframe {
-    width: 95%;
-    //height: auto;
-    max-width: 560px;
-    max-height: 315px;
-    display: block;
-    margin: auto;
-  }
-}
+
 @media (min-width: 1000px) {
   body {
       font-size: 20px;

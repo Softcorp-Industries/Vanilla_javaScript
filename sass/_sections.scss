@@ -1,45 +1,156 @@
+@use "_global" as *;
+@use "_mixin" as *;
+
 .chapter {
-    margin: auto;
-    padding-top: 1.5em;
-    width: 95%;
-    h2 {
-        font-size: 1.75em;
-        color: yellow;
-        text-shadow: 0px 0px 2px black;
-    }
+  margin: auto;
+  padding-top: 1.5em;
+  width: 95%;
+  h2 {
+    font-size: 1.75em;
+    color: yellow;
+    text-shadow: 0px 0px 2px black;
+  }
 }
 .subHeader {
-    font-size: 1.25em;
-    font-weight: 600;
+  font-size: 1.25em;
+  font-weight: 600;
 }
 .note {
-    margin-bottom: -1rem;
-    font-weight: 600;
+  margin-bottom: -1rem;
+  font-weight: 600;
 }
 .consoleDisplay {
-    font-weight: 600;
-    font-style: italic;
+  font-weight: 600;
+  font-style: italic;
 }
 .quote {
-    margin: 2rem auto;
-    width: 80%;
-    max-width: 650px;
-    text-align: center;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 650px;
+  text-align: center;
 }
 .vidChapters {
-    display: none;
+  display: none;
+}
+.desktop {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  letter-spacing: 2px;
+  &__monitor {
+    @include tablet;
+    margin: auto;
+    padding: 0.4em;
+    border-radius: 0.5rem;
+    background-color: black;
+    text-align: center;
+    width: 560px;
+    height: 355px;
+    picture {
+      border-radius: 0.5em;
+      iframe {
+        border-radius: 0.5em;
+        display: block;
+        width: 100%;
+      }
+    }
+    p {
+      margin-top: 0;
+      padding: 0.25rem;
+      font-size: 12px;
+      color: var(--white);
+    }
+  }
+  p {
+      font-family: "Audiowide";
+      span {
+          font-family: "";
+      }
+  }
+}
+.intro {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 4em;
+}
+.btn-readMore {
+  display: flex;
+  align-items: center;
+  //justify-content: space-evenly;
+  padding: 5px 15px;
+  //padding-left: 15px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.btn-readMore:hover {
+  background-color: white;
+  border-radius: 10px;
+  transform: scale(1.1);
+}
+.readMore-img {
+  margin-left: 5px;
+  width: 15px;
+  transform: rotateZ(90deg);
+}
+.readMore-section {
+  display: none;
+}
+.readMore-top {
+  font-size: 1.2em;
+}
+.credit {
+    margin: auto;
+    padding-top: 1em;
+    width: 90%;
+    p {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-bottom: .5em;
+        padding-bottom: 0;
+        letter-spacing: .3rem;
+        font-size: 2em;
+        display: block;
+        a {
+            text-decoration: none;
+            width: 100%;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+    p {
+        a:hover {
+            color: yellow;
+            text-shadow: 0px 0px 2px black;
+            transform: scale(1.2);
+        }
+    }
 }
 .mdnDoc {
-    padding: 1.25em;
-    color: white;
-    background-color: black;
-    border-radius: 1em;
+  margin: 2em auto;
+  padding: 1.25em;
+  max-width: 800px;
+  color: white;
+  background-color: black;
+  border-radius: 1em;
+}
+.authorLink {
+  text-align: right;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: white;
 }
 
 @media (min-width: 700px) {
   .chapter {
-      h2 {
-          font-size: 2em;
-      }
+    h2 {
+      font-size: 2em;
+    }
   }
 }
