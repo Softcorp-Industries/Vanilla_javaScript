@@ -63,10 +63,10 @@
     }
   }
   p {
-      font-family: "Audiowide";
-      span {
-          font-family: "";
-      }
+    font-family: "Audiowide";
+    span {
+      font-family: "";
+    }
   }
 }
 .intro {
@@ -102,35 +102,53 @@
 .readMore-top {
   font-size: 1.2em;
 }
+.outline {
+  margin: 2em auto;
+  max-width: 700px;
+  text-align: center;
+}
+.bullets {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  img {
+    width: 50px;
+  }
+  p {
+    text-align: left;
+    margin-left: 3em;
+  }
+}
 .credit {
+  margin: auto;
+  padding-top: 1em;
+  width: 90%;
+  p {
+    width: 80%;
     margin: auto;
-    padding-top: 1em;
-    width: 90%;
-    p {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: .5em;
-        padding-bottom: 0;
-        letter-spacing: .3rem;
-        font-size: 2em;
-        display: block;
-        a {
-            text-decoration: none;
-            width: 100%;
-        }
-    }
+    text-align: center;
+    margin-bottom: 0.5em;
+    padding-bottom: 0;
+    letter-spacing: 0.3rem;
+    font-size: 2em;
+    display: block;
     a {
-        display: block;
-        text-align: center;
+      text-decoration: none;
+      width: 100%;
     }
-    p {
-        a:hover {
-            color: yellow;
-            text-shadow: 0px 0px 2px black;
-            transform: scale(1.2);
-        }
+  }
+  a {
+    display: block;
+    text-align: center;
+  }
+  p {
+    a:hover {
+      color: yellow;
+      text-shadow: 0px 0px 2px black;
+      transform: scale(1.2);
     }
+  }
 }
 .mdnDoc {
   margin: 2em auto;
@@ -139,6 +157,18 @@
   color: white;
   background-color: black;
   border-radius: 1em;
+}
+.w3cDoc {
+  margin: 2em auto;
+  padding: 1em;
+  max-width: 800px;
+  border-radius: 0.5em;
+  background-color: rgb(219, 219, 219);
+  color: black;
+  box-shadow: 0px 0px 3px black;
+  .authorLink {
+    color: black;
+  }
 }
 .authorLink {
   text-align: right;

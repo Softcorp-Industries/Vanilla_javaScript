@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>The DOM</title>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <h2>The DOM</h2>
+      <ul class="navBar">
+        <li class="navBar__list-item">
+          <a href="index.html" title="FCC Vanilla javaScript">Vanilla JS</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#welcome" title="">Welcome</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#domInterface" title="FCC Notes ES6">DOM Interfaces</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#classes" title="">Classes</a>
+        </li>
+        <li class="navBar__list-item">
+          <a href="#symbols" title="">Sym</a>
+        </li>
+      </ul>
+    </nav>
+    <header class="main-header">
+      <div id="darkMode" class="darkMode">
+        <button id="darkModeBtn" class="dmToggle"></button>
+      </div>
+      <h1>javaScript DOM</h1>
+    </header>
+    <div class="intro">
+      <div class="readMore-top">
+        <p>
+          Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
+          my own. I've found several resourses available to anyone wanting to
+          learn web development.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          I use a few different web sites for free courses and reference
+          material, like "Free code Camp", "W3 Schools" and "MDN Web Docs". I
+          use these sites for theory, testing and documentation. I also found
+          lots of videos on YouTube that were great for beginers right up to
+          more advanced programming. I did find the theory and having lectures
+          from videos beneficial but they just didn't complete the learning
+          process, I had to take notes too. I try to reference the sites I used
+          for source material when possible in my notes.
+        </p>
+        <p>
+          I've started to build several reference document web pages to practice
+          building web pages while taking notes on different subjects.
+        </p>
+      </div>
+      <br />
+      <button class="btn-readMore">
+        read more
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </div>
+    <section class="chapter" id="welcome">
+      <h2>Welcome to the DOM</h2>
+      <div class="readMore-top">
+        <p>
+          The Document Object Model (DOM) is the data representation of the
+          objects that comprise the structure and content of a document on the
+          web. This guide will introduce the DOM, look at how the DOM represents
+          an HTML document in memory and how to use APIs to create web content
+          and applications.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          The Document Object Model (DOM) is a programming interface for web
+          documents. It represents the page so that programs can change the
+          document structure, style, and content. The DOM represents the
+          document as nodes and objects; that way, programming languages can
+          interact with the page.
+        </p>
+        <p>
+          A web page is a document that can be either displayed in the browser
+          window or as the HTML source. In both cases, it is the same document
+          but the Document Object Model (DOM) representation allows it to be
+          manipulated. As an object-oriented representation of the web page, it
+          can be modified with a scripting language such as JavaScript.
+        </p>
+        <p>
+          The DOM is built using multiple APIs that work together. The core DOM
+          defines the entities describing any document and the objects within
+          it. This is expanded upon as needed by other APIs that add new
+          features and capabilities to the DOM. For example, the HTML DOM API
+          adds support for representing HTML documents to the core DOM, and the
+          SVG API adds support for representing SVG documents.
+        </p>
+      </div>
+      <br />
+      <button class="btn-readMore">
+        Read More
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </section>
+    <hr />
+    <main>
+      <section class="chapter" id="dom">
+        <h2>Document Object Model</h2>
+        <p class="subHeader">What is the DOM</p>
+        <div class="w3cDoc">
+          <p>
+            <em
+              >"The W3C Document Object Model (DOM) is a platform and
+              language-neutral interface that allows programs and scripts to
+              dynamically access and update the content, structure, and style of
+              a document."</em
+            >
+          </p>
+          <p class="authorLink">W3C</p>
+        </div>
+        <div class="outline">
+          <p>
+            The <strong>W3C DOM</strong> standard is separated into 3 different
+            parts:
+          </p>
+          <div class="bullets">
+            <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+            <p>
+              <strong>Core DOM</strong> - standard model for all document types
+            </p>
+          </div>
+          <div class="bullets">
+            <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+            <p><strong>XML DOM</strong> - standard model for XML documents</p>
+          </div>
+          <div class="bullets">
+            <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+            <p><strong>HTML DOM</strong> - standard model for HTML documents</p>
+          </div>
+        </div>
+      </section>
+      <br />
+      <hr />
+      <section class="chapter" id="domInterface">
+        <h2>DOM Interfaces</h2>
+        <br />
+        <div class="mdnDoc">
+          <p class="subHeader">The Document Object</p>
+          <p>
+            The Document interface represents any web page loaded in the browser
+            and serves as an entry point into the web page's content, which is
+            the DOM tree.
+          </p>
+          <p>
+            The DOM tree includes elements such as &ltbody&gt and &lttable&gt,
+            among many others. It provides functionality globally to the
+            document, like how to obtain the page's URL and create new elements
+            in the document.
+          </p>
+          <p>
+            The Document interface describes the common properties and methods
+            for any kind of document. Depending on the document's type (e.g.
+            HTML, XML, SVG, …), a larger API is available: HTML documents,
+            served with the "text/html" content type, also implement the
+            HTMLDocument interface, whereas XML and SVG documents implement the
+            XMLDocument interface.
+          </p>
+          <p class="authorLink">MDN Web Docs</p>
+        </div>
+        <br />
+        <p>
+          <a
+            href="https://www.geeksforgeeks.org/differences-between-document-and-window-objects/"
+            target="_blank"
+            >GeeksforGeeks</a
+          >
+        </p>
+        <p>
+          The document object represent a web page that is loaded in the
+          browser. By accessing the document object, we can access the element
+          in the HTML page. With the help of document objects, we can add
+          dynamic content to our web page. The document object can be accessed
+          with a window.document or just document.
+        </p>
+        <div class="w3cDoc">
+          <p class="subHeader">Properties:</p>
+          <p>
+            HTML DOM <strong>properties</strong> are <strong>values</strong> (of
+            HTML Elements) that you can set or change.
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
+        <p class="subHeader">Syntax</p>
+        <pre class="codeExample">
+          <code>
+  document.property_name;
+          </code>
+        </pre>
+        <p>
+          The properties of document objects that are commonly used are listed
+          below:
+        </p>
+        <div class="outline">
+          <div class="readMore-top">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">activeElement:</p>
+                <p>It returns the currently active elements in the document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">body:</p>
+                <p>It returns the contents of the body element.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">anchors:</p>
+                <p>
+                  It returns all &lta&gt elements that have a name attribute.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">baseURI:</p>
+                <p>
+                  It returns a string value that represents the base URI of the
+                  document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">cookie:</p>
+                <p>It returns the cookie of the current document.</p>
+              </div>
+            </div>
+          </div>
+          <div class="readMore-section">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">charSet:</p>
+                <p>
+                  It returns a string, representing the document's character
+                  encoding.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">defaultView:</p>
+                <p>It returns the current Window Object.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">designMode:</p>
+                <p>It is used to set documents as editable or read-only.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">domain:</p>
+                <p>It returns the domain name of the document server.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">doctype:</p>
+                <p>It returns the document's doctype.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">URL:</p>
+                <p>It returns the complete URL of the document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">forms:</p>
+                <p>It returns all the elements of the form.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">fullScreenElement:</p>
+                <p>
+                  It returns the element that is currently present in
+                  full-screen mode.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">title:</p>
+                <p>It returns the title element of the document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">head:</p>
+                <p>It returns the head element of the document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">links:</p>
+                <p>
+                  It returns all &ltarea&gt and &lta&gt elements that have a
+                  href attribute.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">lastModified:</p>
+                <p>
+                  It returns the date and time of the current document that was
+                  last modified.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">images:</p>
+                <p>
+                  It returns the collection of &ltimg&gt elements in the
+                  document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">implementation:</p>
+                <p>
+                  It returns the DOMImplementation object associated with the
+                  current document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">readyState:</p>
+                <p>It returns the loading status of the current document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">referrer:</p>
+                <p>
+                  It returns the URI of the page that is linked to the current
+                  page.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">scripts:</p>
+                <p>It returns all script elements present in the document.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">strictErrorChecking:</p>
+                <p>
+                  It sets or returns whether strict error checking can be
+                  enforced on a document or not.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <button class="btn-readMore">
+            Read More
+            <img
+              class="readMore-img"
+              src="./img/icon/icons8-chevron-24.png"
+              alt=""
+            />
+          </button>
+        </div>
+        <br />
+        <div class="w3cDoc">
+          <p class="subHeader">Methods:</p>
+          <p>
+            HTML DOM <strong>methods</strong> are <strong>actions</strong> you
+            can perform (on HTML Elements).
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
+        <p class="subHeader">Syntax</p>
+        <pre class="codeExample">
+          <code>
+  document.method_name;
+          </code>
+        </pre>
+        <p>
+          A list of the most commonly used methods for the document object are
+          listed below:
+        </p>
+        <div class="outline">
+          <div class="readMore-top">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">addEventListener():</p>
+                <p>
+                  It is used to attach an event handler to the specified
+                  element.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">adoptNode():</p>
+                <p>
+                  It is used to adopt a node from another document and it
+                  returns a node object, representing the adopted node.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">close():</p>
+                <p>It is used to close the output stream.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createAttribute():</p>
+                <p>
+                  It is used to create an attribute node with the specified name
+                  and returns the attribute object.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createComment():</p>
+                <p>It is used to create a comment node with some text.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="readMore-section">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createDocumentFragment():</p>
+                <p>
+                  It is used to create the document fragment to change the
+                  content of the document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createElement():</p>
+                <p>It is used to create HTML element .</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createEvent():</p>
+                <p>It is used to create a new events object.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">createTextNode():</p>
+                <p>It is used to create a textnode.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">execCommand():</p>
+                <p>
+                  It is used to execute a command specified by the user on the
+                  editable selected section. It returns a Boolean value.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">fullscreenEnabled():</p>
+                <p>
+                  It is used to check whether the document can be viewed in
+                  fullscreen mode or not. It returns a boolean value.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getElementById():</p>
+                <p>
+                  It returns the object of the given ID. If no object with that
+                  id exists then it returns null.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getElementsByClassName():</p>
+                <p>
+                  It returns an object containing all the elements with the
+                  specified class names in the document as objects.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getElementsByName():</p>
+                <p>
+                  It returns an object containing all the elements with the
+                  specified name in the document as objects.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getElementsByTagName():</p>
+                <p>
+                  It returns an object containing all the elements with the
+                  specified tag names in the document as objects.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">hasFocus():</p>
+                <p>
+                  It returns a boolean value that indicates whether the document
+                  or element has focus or not.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">importNode():</p>
+                <p>
+                  It imports the copy of a node from another document in the
+                  current document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">normalize():</p>
+                <p>
+                  It flushes out the empty nodes and merges the adjacent text
+                  nodes with the first text node and
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">normalizeDocument():</p>
+                <p>
+                  It is used to normalize an HTML document by removing any empty
+                  text nodes and joining the adjacent text nodes.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">open():</p>
+                <p>
+                  It is used to open the output stream to collect the output.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">querySelector():</p>
+                <p>
+                  It returns the first element that matches a specified CSS
+                  selector(s) in the document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">querySelectorAll():</p>
+                <p>
+                  It returns a collection of an element's child elements that
+                  matches a specified CSS selector(s) in the document
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">removeEventListener():</p>
+                <p>
+                  It removes the event handler from an element that has an
+                  attached event.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">renameNode():</p>
+                <p>It is used to rename the node.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">write():</p>
+                <p>
+                  It is used to write some content or javascript code in the
+                  document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">writeln():</p>
+                <p>
+                  It is used to write a document with a newline character after
+                  each statement.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-readMore">
+            Read More
+            <img
+              class="readMore-img"
+              src="./img/icon/icons8-chevron-24.png"
+              alt=""
+            />
+          </button>
+        </div>
+        <br />
+        <div class="mdnDoc">
+          <p class="subHeader">The Window Object</p>
+          <p></p>
+        </div>
+        <br />
+        <p>
+          The window object is the topmost object of the DOM hierarchy. It
+          represents a browser window or frame that displays the contents of the
+          webpage. Whenever a window appears on the screen to display the
+          contents of the document, the window object is created.
+        </p>
+        <div class="w3cDoc">
+          <p class="subHeader">Properties:</p>
+          <p>
+            HTML DOM <strong>properties</strong> are <strong>values</strong> (of
+            HTML Elements) that you can set or change.
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
+        <p class="subHeader">Syntax</p>
+        <pre class="codeExample">
+          <code>
+  window.property_name;
+          </code>
+        </pre>
+        <p>
+          The properties of document objects that are commonly used are listed
+          below:
+        </p>
+        <div class="outline">
+          <div class="readmore-top">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Closed:</p>
+                <p>
+                  It holds a Boolean value that represents whether the window is
+                  closed or not.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">console:</p>
+                <p>
+                  It returns a reference to the console object which provides
+                  access to the browser's debugging console.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">defaultStatus:</p>
+                <p>
+                  It is used to define the default message that will be
+                  displayed in the status bar when no activity is carried on by
+                  the browser.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">controllers:</p>
+                <p>
+                  It returns the XUL controller objects for the current Chrome
+                  window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">customElements:</p>
+                <p>
+                  It returns a reference to the CustomElementRegistry object,
+                  which can be used to register new custom elements and also get
+                  information about already registered custom elements.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="readMore-section">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">crypto:</p>
+                <p>It returns the browser crypto object.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">devicePixelRatio:</p>
+                <p>
+                  It returns the ratio between physical pixels and
+                  device-independent pixels in the current display.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Document:</p>
+                <p>
+                  It returns a reference to the document object of that window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">DOMMatrix:</p>
+                <p>
+                  It returns a reference to a DOMMatrix object, which represents
+                  4x4 matrices, suitable for 2D and 3D operations.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">frames[]:</p>
+                <p>
+                  It represents an array that contains all the frames of a given
+                  window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">DOMPoint:</p>
+                <p>
+                  It returns a reference to a DOMPoint object, which represents
+                  a 2D or 3D point in a coordinate system.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">History:</p>
+                <p>
+                  It provides information on the URLs visited in the current
+                  window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Length:</p>
+                <p>It represents the number of frames in the current window.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">DOMRect:</p>
+                <p>
+                  It returns a reference to a DOMRect object, which represents a
+                  rectangle.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">fullScreen:</p>
+                <p>
+                  This property indicates whether the window is displayed on
+                  full screen or not.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Location:</p>
+                <p>It contains the URL of the current window.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">innerHeight:</p>
+                <p>
+                  It is used to get the height of the content area of the
+                  browser window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">innerWidth:</p>
+                <p>
+                  It is used to get the width of the content area of the browser
+                  window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Name:</p>
+                <p>It contains the name of the referenced window.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Window:</p>
+                <p>It returns the current window or frame.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Navigator:</p>
+                <p>It returns a reference to the navigator object.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">outerHeight:</p>
+                <p>
+                  It will get the height of the outside of the browser window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">outerWidth:</p>
+                <p>
+                  It will get the width of the outside of the browser window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Status:</p>
+                <p>
+                  It overrides the default status and places a message in the
+                  status bar.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Top:</p>
+                <p>
+                  It returns a reference to the topmost window containing a
+                  frame if many windows are opened.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Toolbar:</p>
+                <p>
+                  It will result in the toolbar object, whose visibility can be
+                  toggled in the window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Opener:</p>
+                <p>
+                  It contains a reference to the window that opened the current
+                  window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Parent:</p>
+                <p>
+                  It refers to the frameset in which the current frame is
+                  contained.p>
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Screen:</p>
+                <p>It refers to the screen object</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">Self:</p>
+                <p>It provides another way to refer to the current window.</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-readMore">
+            Read More
+            <img
+              class="readMore-img"
+              src="./img/icon/icons8-chevron-24.png"
+              alt=""
+            />
+          </button>
+        </div>
+        <br />
+        <div class="w3cDoc">
+          <p class="subHeader">Methods:</p>
+          <p>
+            HTML DOM <strong>methods</strong> are <strong>actions</strong> you
+            can perform (on HTML Elements).
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
+        <p class="subHeader">Syntax</p>
+        <pre class="codeExample">
+          <code>
+  window.method_name;
+          </code>
+        </pre>
+        <p>
+          The lists of most commonly used methods for window objects are listed
+          below:
+        </p>
+        <div class="outline">
+          <div class="readMore-top">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">alert():</p>
+                <p>
+                  It is used to display an alert box. It displays a specified
+                  message along with an OK button and is generally used to make
+                  sure that the information comes through the user.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">atob():</p>
+                <p>
+                  It is used for decoding a base-64 encoded string. It is used
+                  to decode a string of data that has been encoded using the
+                  btoa() method.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">blur():</p>
+                <p>It is used to remove focus from the current window.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">btoa():</p>
+                <p>It is used for encoding a string in base-64 format.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">clearInterval():</p>
+                <p>
+                  It clears the interval which has been set by the setInterval()
+                  function before that.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="readMore-section">
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">clearTimeout():</p>
+                <p>
+                  It clears the timeout which has been set by the
+                  setTimeout()function before that.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">close():</p>
+                <p>
+                  It is used for closing a certain window or tab of the browser
+                  which was previously opened.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">confirm():</p>
+                <p>
+                  It is used to display a modal dialog with an optional message
+                  and two buttons i.e. OK and Cancel. It returns true if the
+                  user clicks “OK”, and false otherwise.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">focus():</p>
+                <p>
+                  It is used to give focus to an element in the current window.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getComputedStyle():</p>
+                <p>
+                  It is used to get all the computed CSS properties and values
+                  of the specified element.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">getSelection():</p>
+                <p>
+                  It returns a Selection object representing the range of text
+                  selected by the user
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">matchMedia():</p>
+                <p>
+                  It is used to return a MediaQueryList object which represents
+                  the result of the specified CSS media query string.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">open():</p>
+                <p>
+                  It is used to open a new tab or window with the specified URL
+                  and name.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">moveBy():</p>
+                <p>
+                  It is used for moving a window with a specified number of
+                  pixels relative to its current coordinates.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">moveTo():</p>
+                <p>
+                  It is used in the window to move the window from the left and
+                  top coordinates.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">prompt():</p>
+                <p>
+                  It is used to display a dialog with an optional message
+                  prompting the user to input some text
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">resizeBy():</p>
+                <p>It is used to resize a window by the specified amount.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">resizeTo():</p>
+                <p>
+                  It is used to resize a window to the specified width and
+                  height.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">scrollBy():</p>
+                <p>
+                  It is used to scroll the document by the given number of
+                  pixels.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">scrollTo():</p>
+                <p>
+                  It is used to scroll to a particular set of coordinates in the
+                  document.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">setInterval():</p>
+                <p>It repeats a given function at every given time interval.</p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">setTimeout():</p>
+                <p>
+                  It executes a function, after waiting a specified number of
+                  milliseconds.
+                </p>
+              </div>
+            </div>
+            <div class="bullets">
+              <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
+              <div class="noteInfo">
+                <p class="note">stop():</p>
+                <p>
+                  It is used to stop the window from loading resources in the
+                  current browsing context.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-readMore">
+            Read More
+            <img
+              class="readMore-img"
+              src="./img/icon/icons8-chevron-24.png"
+              alt=""
+            />
+          </button>
+        </div>
+        <br />
+        <p class="subHeader">Difference between document and window:</p>
+      </section>
+    </main>
+    <button id="topBtn">
+      <img
+        src="./img/icon/icons8-wide-right-arrow-64.png"
+        alt=""
+        title="Top of Page"
+      />
+    </button>
+    <footer class="pageFooter">
+      <h2>Christopher Guy</h2>
+    </footer>
+  </body>
+</html>

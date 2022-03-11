@@ -1,12 +1,14 @@
-
+@use "_global" as *;
+@use "_mixin" as *;
 
 .main-header {
-    padding: 2rem 0;
-    text-align: center;
-    letter-spacing: .5rem;
-    font-size: 1em;
-    color: yellow;
-    text-shadow: 0px 0px 2px black;
+  
+      padding: 2rem 0;
+      text-align: center;
+      letter-spacing: .5rem;
+      font-size: 1em;
+      color: yellow;
+      text-shadow: 0px 0px 2px black;
 }
 
 .pageFooter {
@@ -22,11 +24,11 @@
 }
 @media (min-width: 700px) {
   .main-header {
-          font-size: 1.5em;
+      font-size: 1.5em;
   }
 }
 @media (min-width: 1000px) {
   .main-header {
-          font-size: 2em;
+      font-size: 2em;
   }
 }
