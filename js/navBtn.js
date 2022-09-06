@@ -1,4 +1,4 @@
-alert("nav page js working");
+//alert("nav page js working");
 
 
 const menuBtn = document.querySelector(".navBar-menu");
