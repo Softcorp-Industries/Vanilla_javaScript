@@ -17,6 +17,9 @@
 
 <body data-darkMode='light'>
   <nav class="main-nav">
+    <div class="navBar-menu">
+        <div class="navBar-btn"></div>
+      </div>
     <h2>JS Basics</h2>
     <ul class="navBar">
       <li><a href="index.html">Vanilla JS</a></li>
@@ -50,11 +53,45 @@
     </p>
     <p class="author">Paulo Coelho</p>
   </article>
-  <section class="intro" id="MDNWebDocs">
+  <section class="intro">
+      <div class="readMore-top">
+        <p>
+          Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
+          my own. I've found several resourses available to anyone wanting to
+          learn web development.
+        </p>
+      </div>
+      <div class="readMore-section">
+        <p>
+          I use a few different web sites for free courses and reference
+          material, like "Free code Camp", "W3 Schools" and "MDN Web Docs". I
+          use these sites for theory, testing and documentation. I also found
+          lots of videos on YouTube that were great for beginers right up to
+          more advanced programming. I did find the theory and having lectures
+          from videos beneficial but they just didn't complete the learning
+          process, I had to take notes too. I try to reference the sites I used
+          for source material when possible in my notes.
+        </p>
+        <p>
+          I've started to build several reference document web pages to practice
+          building web pages while taking notes on different subjects.
+        </p>
+      </div>
+      <br />
+      <button class="btn-readMore" id="readMoreIntro">
+        read more
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </section>
     <h2>
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
         title="MDN Web Docs">JavaScript</a>
     </h2>
+  <section class="chapter" id="welcome">
     <p>
       JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled
       programming language with first-class functions. While it is most
@@ -73,9 +110,19 @@
       title="FCC">javaScript Algorithms and Data Structures</a>
   </div>
   <br>
-  <picture>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </picture>
+  <div class="tutor">
+        <section class="desktop">
+          <p>Free Code Camp</p>
+          <div class="desktop__monitor">
+            <picture>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </picture>
+            <p>Softcorp TV</p>
+          </div>
+          <p>Vanilla javaScript</p>
+        </section>
+
+  </div>
   <div class="vidChapters">
     <pre>
   comment your Javascript code 4:22

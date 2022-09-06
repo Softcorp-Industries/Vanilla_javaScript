@@ -1,13 +1,15 @@
 .main-nav {
   position: fixed;
-  left: 0;
+  left: -225px;
   top: 0;
   min-width: 215px;
   height: 99vh;
-  overflow: auto;
+  //overflow: hidden;
   border: 1px solid rgb(49, 49, 49);
   font-family: "Roboto";
   background-color: black;
+  transition: all 0.5s ease-in-out;
+  transform-origin: center;
   h2 {
     margin: 0;
     padding: 0.5rem 0;
@@ -34,17 +36,117 @@
         letter-spacing: 2px;
         color: white;
         text-decoration: none;
+      }
     }
-}
-li a:hover {
-    background-color: yellow;
-    color: var(--black);
+    li a:hover {
+      background-color: yellow;
+      color: var(--black);
     }
   }
+  .navBar-menu {
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    left: 240px;
+    height: 60px;
+    width: 60px;
+    z-index: 10;
+    .navBar-btn {
+      //z-index: 50;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 40px;
+      background-color: yellow;
+      box-shadow: 0px 0px 3px black;
+      border-radius: 25%;
+    }
+    .navBar-btn::before,
+    .navBar-btn::after {
+      content: "";
+      cursor: pointer;
+      position: absolute;
+      height: 4px;
+      background-color: yellow;
+      box-shadow: 0px 0px 3px black;
+      border-radius: 25%;
+      transition: all 0.5s ease-in-out;
+    }
+    .navBar-btn::before {
+      width: 35px;
+      height: 5px;
+      transform: translateY(-8px);
+    }
+    .navBar-btn::after {
+      width: 45px;
+      height: 5px;
+      transform: translateY(8px);
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .main-nav {
+    .navBar-menu {
+      .navBar-btn::before {
+        transform: translateY(-10px);
+      }
+      .navBar-btn::after {
+        transform: translateY(10px);
+      }
+    }
+  }
+}
+//  This makes the middle line dissapear
+.navBar-menu.openMenu .navBar-btn {
+  background: transparent;
+  box-shadow: none;
+}
+//  This rotates the top line and changes the color
+.navBar-menu.openMenu .navBar-btn::before {
+  transform: rotate(45deg);
+  background-color: red;
+  width: 40px;
+  box-shadow: none;
+}
+//  This rrotates the bottom line and changes the color
+.navBar-menu.openMenu .navBar-btn::after {
+  transform: rotate(-45deg);
+  background-color: red;
+  width: 40px;
+  box-shadow: none;
+}
+.main-nav.openNav {
+  left: 0;
 }
 
 @media (min-width: 1000px) {
   .main-nav {
     min-width: 275px;
+    left: -280px;
+    .navBar-menu {
+      top: 30px;
+      left: 300px;
+      .navBar-btn {
+        width: 50px;
+        height: 6px;
+      }
+      .navBar-btn::before {
+        width: 45px;
+        height: 6px;
+      }
+      .navBar-btn::after {
+        width: 55px;
+        height: 6px;
+      }
+    }
+  }
+
+  .navBar-menu.openMenu .navBar-btn::before {
+    width: 50px;
+  }
+  .navBar-menu.openMenu .navBar-btn::after {
+    width: 50px;
   }
 }

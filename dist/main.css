@@ -46,7 +46,6 @@ body.transition *:after {
 
 body {
   background-color: var(--darkModeBg);
-  margin-left: 225px;
   font-size: 16px;
   color: var(--darkModeTxtClr);
 }
@@ -71,6 +70,8 @@ body[data-darkMode=darkMode] {
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -103,7 +104,6 @@ hr {
 @media (min-width: 1000px) {
   body {
     font-size: 20px;
-    margin-left: 285px;
   }
 }
 .main-header {
@@ -233,28 +233,18 @@ hr {
   }
 }
 #topBtn {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Fixed/sticky position */
-  bottom: 20px;
-  /* Place the button at the bottom of the page */
-  right: 30px;
-  /* Place the button 30px from the right */
-  z-index: 99;
-  /* Make sure it does not overlap */
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
   transform: rotateZ(-90deg);
-  border: none;
-  /* Remove borders */
-  outline: none;
-  /* Remove outline */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
   background-color: transparent;
-  padding: 15px;
-  /* Some padding */
-  border-radius: 10px;
-  /* Rounded corners */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Add a mouse pointer on hover */
 }
 #topBtn img {
   width: 25px;
@@ -269,6 +259,7 @@ hr {
   margin: auto;
   padding-top: 1.5em;
   width: 95%;
+  max-width: 800px;
 }
 .chapter h2 {
   font-size: 1.75em;
@@ -440,7 +431,7 @@ hr {
   padding: 1em;
   max-width: 800px;
   border-radius: 0.5em;
-  background-color: #dbdbdb;
+  background-color: rgb(219, 219, 219);
   color: black;
   box-shadow: 0px 0px 3px black;
 }
@@ -481,7 +472,7 @@ hr {
 }
 
 .string {
-  color: #ff7b00;
+  color: rgb(255, 123, 0);
   font-weight: 600;
 }
 
@@ -505,7 +496,7 @@ hr {
   min-height: 80px;
   overflow: auto;
   border-left: 5px solid yellow;
-  background-color: #c9c9c9;
+  background-color: rgb(201, 201, 201);
 }
 
 .codeExample code {
@@ -524,14 +515,15 @@ hr {
 }
 .main-nav {
   position: fixed;
-  left: 0;
+  left: -225px;
   top: 0;
   min-width: 215px;
   height: 99vh;
-  overflow: auto;
-  border: 1px solid #313131;
+  border: 1px solid rgb(49, 49, 49);
   font-family: "Roboto";
   background-color: black;
+  transition: all 0.5s ease-in-out;
+  transform-origin: center;
 }
 .main-nav h2 {
   margin: 0;
@@ -539,7 +531,7 @@ hr {
   text-align: center;
   color: var(--black);
   background-color: yellow;
-  border-bottom: 1px solid #313131;
+  border-bottom: 1px solid rgb(49, 49, 49);
 }
 .main-nav .navBar {
   padding-left: 0;
@@ -565,9 +557,104 @@ hr {
   background-color: yellow;
   color: var(--black);
 }
+.main-nav .navBar-menu {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  left: 240px;
+  height: 60px;
+  width: 60px;
+  z-index: 10;
+}
+.main-nav .navBar-menu .navBar-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 40px;
+  background-color: yellow;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 25%;
+}
+.main-nav .navBar-menu .navBar-btn::before,
+.main-nav .navBar-menu .navBar-btn::after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  height: 4px;
+  background-color: yellow;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 25%;
+  transition: all 0.5s ease-in-out;
+}
+.main-nav .navBar-menu .navBar-btn::before {
+  width: 35px;
+  height: 5px;
+  transform: translateY(-8px);
+}
+.main-nav .navBar-menu .navBar-btn::after {
+  width: 45px;
+  height: 5px;
+  transform: translateY(8px);
+}
+
+@media (min-width: 1000px) {
+  .main-nav .navBar-menu .navBar-btn::before {
+    transform: translateY(-10px);
+  }
+  .main-nav .navBar-menu .navBar-btn::after {
+    transform: translateY(10px);
+  }
+}
+.navBar-menu.openMenu .navBar-btn {
+  background: transparent;
+  box-shadow: none;
+}
+
+.navBar-menu.openMenu .navBar-btn::before {
+  transform: rotate(45deg);
+  background-color: red;
+  width: 40px;
+  box-shadow: none;
+}
+
+.navBar-menu.openMenu .navBar-btn::after {
+  transform: rotate(-45deg);
+  background-color: red;
+  width: 40px;
+  box-shadow: none;
+}
+
+.main-nav.openNav {
+  left: 0;
+}
 
 @media (min-width: 1000px) {
   .main-nav {
     min-width: 275px;
+    left: -280px;
+  }
+  .main-nav .navBar-menu {
+    top: 30px;
+    left: 300px;
+  }
+  .main-nav .navBar-menu .navBar-btn {
+    width: 50px;
+    height: 6px;
+  }
+  .main-nav .navBar-menu .navBar-btn::before {
+    width: 45px;
+    height: 6px;
+  }
+  .main-nav .navBar-menu .navBar-btn::after {
+    width: 55px;
+    height: 6px;
+  }
+  .navBar-menu.openMenu .navBar-btn::before {
+    width: 50px;
+  }
+  .navBar-menu.openMenu .navBar-btn::after {
+    width: 50px;
   }
 }

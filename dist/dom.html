@@ -15,6 +15,9 @@
   </head>
   <body>
     <nav class="main-nav">
+      <div class="navBar-menu">
+        <div class="navBar-btn"></div>
+      </div>
       <h2>The DOM</h2>
       <ul class="navBar">
         <li class="navBar__list-item">
@@ -40,7 +43,7 @@
       </div>
       <h1>javaScript DOM</h1>
     </header>
-    <div class="intro">
+    <section class="intro">
       <div class="readMore-top">
         <p>
           Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
@@ -65,7 +68,7 @@
         </p>
       </div>
       <br />
-      <button class="btn-readMore">
+      <button class="btn-readMore" id="readMoreIntro">
         read more
         <img
           class="readMore-img"
@@ -73,7 +76,7 @@
           alt=""
         />
       </button>
-    </div>
+    </section>
     <section class="chapter" id="welcome">
       <h2>Welcome to the DOM</h2>
       <div class="readMore-top">
@@ -110,7 +113,7 @@
         </p>
       </div>
       <br />
-      <button class="btn-readMore">
+      <button class="btn-readMore" id="expandDoc">
         Read More
         <img
           class="readMore-img"
@@ -160,7 +163,25 @@
       <hr />
       <section class="chapter" id="domInterface">
         <h2>DOM Interfaces</h2>
+        <br>
+        <div class="w3cDoc">
+          <p class="subHeader">Methods:</p>
+          <p>
+            HTML DOM <strong>methods</strong> are <strong>actions</strong> you
+            can perform (on HTML Elements).
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
         <br />
+        <div class="w3cDoc">
+          <p class="subHeader">Properties:</p>
+          <p>
+            HTML DOM <strong>properties</strong> are <strong>values</strong> (of
+            HTML Elements) that you can set or change.
+          </p>
+          <p class="authorLink">W3 Schools</p>
+        </div>
+        <br>
         <div class="mdnDoc">
           <p class="subHeader">The Document Object</p>
           <p>
@@ -199,14 +220,6 @@
           dynamic content to our web page. The document object can be accessed
           with a window.document or just document.
         </p>
-        <div class="w3cDoc">
-          <p class="subHeader">Properties:</p>
-          <p>
-            HTML DOM <strong>properties</strong> are <strong>values</strong> (of
-            HTML Elements) that you can set or change.
-          </p>
-          <p class="authorLink">W3 Schools</p>
-        </div>
         <p class="subHeader">Syntax</p>
         <pre class="codeExample">
           <code>
@@ -413,7 +426,7 @@
             </div>
           </div>
           <br />
-          <button class="btn-readMore">
+          <button class="btn-readMore" id="docPropBtn">
             Read More
             <img
               class="readMore-img"
@@ -423,14 +436,6 @@
           </button>
         </div>
         <br />
-        <div class="w3cDoc">
-          <p class="subHeader">Methods:</p>
-          <p>
-            HTML DOM <strong>methods</strong> are <strong>actions</strong> you
-            can perform (on HTML Elements).
-          </p>
-          <p class="authorLink">W3 Schools</p>
-        </div>
         <p class="subHeader">Syntax</p>
         <pre class="codeExample">
           <code>
@@ -488,7 +493,6 @@
               </div>
             </div>
           </div>
-
           <div class="readMore-section">
             <div class="bullets">
               <img src="./img/icon/icons8-wide-right-arrow-64.png" alt="" />
@@ -688,7 +692,8 @@
               </div>
             </div>
           </div>
-          <button class="btn-readMore">
+          <br>
+          <button class="btn-readMore" id="docMethBtn">
             Read More
             <img
               class="readMore-img"
@@ -1007,7 +1012,8 @@
               </div>
             </div>
           </div>
-          <button class="btn-readMore">
+          <br>
+          <button class="btn-readMore" id="winPropBtn">
             Read More
             <img
               class="readMore-img"
@@ -1260,7 +1266,8 @@
               </div>
             </div>
           </div>
-          <button class="btn-readMore">
+          <br>
+          <button class="btn-readMore" id="winMethBtn">
             Read More
             <img
               class="readMore-img"
