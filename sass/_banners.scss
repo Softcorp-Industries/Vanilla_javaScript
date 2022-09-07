@@ -2,7 +2,7 @@
 @use "_mixin" as *;
 
 .main-header {
-  padding: 2em 0;
+  padding: 4em 0;
   text-align: center;
   h1 {
     letter-spacing: 0.25em;
@@ -27,6 +27,7 @@
 }
 @media (min-width: 700px) {
   .main-header {
+  padding: 3em 0;
     h1 {
       font-size: 2em;
     }
@@ -34,6 +35,7 @@
 }
 @media (min-width: 1000px) {
   .main-header {
+  padding: 2em 0;
     h1 {
       font-size: 2.25em;
     }
