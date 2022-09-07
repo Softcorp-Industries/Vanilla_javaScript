@@ -107,12 +107,16 @@ hr {
   }
 }
 .main-header {
-  padding: 2rem 0;
+  padding: 2em 0;
   text-align: center;
-  letter-spacing: 0.5rem;
-  font-size: 1em;
+}
+.main-header h1 {
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
+}
+.main-header h1 span {
+  letter-spacing: 0.25em;
   color: yellow;
-  text-shadow: 0px 0px 2px black;
 }
 
 .pageFooter {
@@ -128,13 +132,13 @@ hr {
 }
 
 @media (min-width: 700px) {
-  .main-header {
-    font-size: 1.5em;
+  .main-header h1 {
+    font-size: 2em;
   }
 }
 @media (min-width: 1000px) {
-  .main-header {
-    font-size: 2em;
+  .main-header h1 {
+    font-size: 2.25em;
   }
 }
 .darkMode {
@@ -520,18 +524,24 @@ hr {
   min-width: 215px;
   height: 99vh;
   border: 1px solid rgb(49, 49, 49);
-  font-family: "Roboto";
   background-color: black;
+  font-family: "Roboto";
   transition: all 0.5s ease-in-out;
   transform-origin: center;
 }
 .main-nav h2 {
+  display: flex;
+  align-items: center;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.5em;
+  letter-spacing: 2px;
   text-align: center;
   color: var(--black);
   background-color: yellow;
   border-bottom: 1px solid rgb(49, 49, 49);
+}
+.main-nav h2 img {
+  margin-left: auto;
 }
 .main-nav .navBar {
   padding-left: 0;
@@ -545,13 +555,18 @@ hr {
 .main-nav .navBar li a {
   height: 2em;
   padding: 0.5em;
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   font-weight: 600;
   letter-spacing: 2px;
   color: white;
   text-decoration: none;
+}
+.main-nav .navBar li a img {
+  display: block;
+  margin-left: auto;
 }
 .main-nav .navBar li a:hover {
   background-color: yellow;
