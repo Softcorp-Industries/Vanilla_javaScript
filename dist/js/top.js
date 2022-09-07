@@ -1,3 +1,4 @@
+alert("top btn js working")
 //Get the button:
 const topButton = document.getElementById("topBtn");
 

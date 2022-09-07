@@ -68,7 +68,6 @@
       content: "";
       cursor: pointer;
       position: absolute;
-      height: 4px;
       background-color: yellow;
       box-shadow: 0px 0px 3px black;
       border-radius: 25%;
@@ -76,8 +75,8 @@
     }
     .navBar-btn::before {
       width: 35px;
-      height: 5px;
-      transform: translateY(-8px);
+      height: 3px;
+      transform: translateY(-7px);
     }
     .navBar-btn::after {
       width: 45px;
@@ -108,6 +107,7 @@
   transform: rotate(45deg);
   background-color: red;
   width: 40px;
+  height: 5px;
   box-shadow: none;
 }
 //  This rrotates the bottom line and changes the color
@@ -115,6 +115,7 @@
   transform: rotate(-45deg);
   background-color: red;
   width: 40px;
+  height: 5px;
   box-shadow: none;
 }
 .main-nav.openNav {
@@ -134,19 +135,21 @@
       }
       .navBar-btn::before {
         width: 45px;
-        height: 6px;
+        height: 5px;
       }
       .navBar-btn::after {
         width: 55px;
-        height: 6px;
+        height: 7px;
       }
     }
   }
 
   .navBar-menu.openMenu .navBar-btn::before {
     width: 50px;
+    height: 6px;
   }
   .navBar-menu.openMenu .navBar-btn::after {
     width: 50px;
+    height: 6px;
   }
 }
